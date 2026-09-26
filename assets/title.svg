@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="158" viewBox="0 0 1000 158" role="img" aria-labelledby="title">
+  <title id="title">EMBER-Bench: an Egocentric Memory Benchmark for Embodied Reasoning over cross-event causality in long-horizon household tasks</title>
+  <style>.title { fill: #1f2328; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 36px; font-weight: 600; } @media (prefers-color-scheme: dark) { .title { fill: #e6edf3; } }</style>
+  <text x="500" y="39" text-anchor="middle" class="title">EMBER-Bench: an <tspan fill="#66a081" font-weight="800">E</tspan>gocentric <tspan fill="#66a081" font-weight="800">M</tspan>emory <tspan fill="#66a081" font-weight="800">B</tspan>enchmark</text>
+  <text x="500" y="87" text-anchor="middle" class="title">for <tspan fill="#66a081" font-weight="800">E</tspan>mbodied <tspan fill="#66a081" font-weight="800">R</tspan>easoning over cross-event causality</text>
+  <text x="500" y="135" text-anchor="middle" class="title">in long-horizon household tasks</text>
+</svg>

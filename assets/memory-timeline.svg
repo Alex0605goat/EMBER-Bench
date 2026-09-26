@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="260" viewBox="0 0 1200 260" role="img" aria-labelledby="title desc">
+<title id="title">From past events to present decisions</title><desc id="desc">A timeline connects a past event to its persistent consequences and the next action. Causal traceback links a given action to its historical cause.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="#c65d2e"/></marker><marker id="back" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="#58766d"/></marker></defs>
+<rect x="1" y="1" width="1198" height="258" rx="20" fill="#fbf8f3" stroke="#e7ded4"/>
+<g font-family="Arial, Helvetica, sans-serif"><text x="46" y="40" font-size="13" font-weight="700" fill="#9b5835" letter-spacing="2">FROM PAST EVENTS TO PRESENT DECISIONS</text>
+<text x="46" y="75" font-size="23" font-weight="700" fill="#2d3434">What happened before changes what should happen next.</text>
+<rect x="46" y="103" width="300" height="77" rx="12" fill="#edf2f9" stroke="#d7e1ef"/><rect x="450" y="103" width="300" height="77" rx="12" fill="#fff0e4" stroke="#efd6bd"/><rect x="854" y="103" width="300" height="77" rx="12" fill="#edf4ef" stroke="#d2e3d6"/>
+<text x="68" y="133" font-size="13" font-weight="700" fill="#587599" letter-spacing="1">PAST EVENT</text><text x="68" y="158" font-size="17" fill="#303b47">An anomaly or intervention</text>
+<text x="472" y="133" font-size="13" font-weight="700" fill="#b05c2f" letter-spacing="1">PERSISTENT CONSEQUENCE</text><text x="472" y="158" font-size="17" fill="#4a3c32">An updated task state</text>
+<text x="876" y="133" font-size="13" font-weight="700" fill="#537462" letter-spacing="1">NEXT ACTION</text><text x="876" y="158" font-size="17" fill="#35433c">A history-grounded decision</text>
+<path d="M360 141H432" stroke="#c65d2e" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/><path d="M764 141H836" stroke="#c65d2e" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+<path d="M1004 190V211Q1004 222 993 222H208Q196 222 196 211V191" stroke="#58766d" stroke-width="1.5" fill="none" marker-end="url(#back)"/>
+<rect x="435" y="209" width="330" height="27" rx="8" fill="#fbf8f3"/><text x="600" y="228" font-size="14" fill="#58766d" text-anchor="middle">CAUSAL TRACEBACK · Which event explains it?</text></g></svg>
