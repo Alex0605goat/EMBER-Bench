@@ -7,7 +7,7 @@
 </picture>
 </h1>
 
-[**Abstract**](#abstract) · [**Benchmark**](#benchmark) · [**Leaderboard**](#leaderboard) · [**Dataset Release**](#dataset-release)
+[**Abstract**](README.md#abstract) · [**Benchmark**](README.md#benchmark) · [**Leaderboard**](README.md#leaderboard) · [**Dataset Release**](README.md#dataset-release)
 
 <img src="assets/memory-timeline.svg" alt="EMBER-Bench connects past events to persistent task states and next actions, and traces a given action back to its historical cause." width="100%">
 
@@ -140,7 +140,7 @@ Complete main results from the manuscript's Table 2, evaluated under the **video
 
 ## Dataset Release
 
-**The dataset will be released soon.** The complete EMBER-Bench release will be announced in the [News](#news) section, together with download and usage instructions.
+**The dataset will be released soon.** The complete EMBER-Bench release will be announced in the [News](README.md#news) section, together with download and usage instructions.
 
 
 ---
