@@ -7,7 +7,7 @@
 </picture>
 </h1>
 
-[**Repository files**](.) · [**Abstract**](#abstract) · [**Benchmark**](#benchmark) · [**Leaderboard**](#leaderboard) · [**Dataset Release**](#dataset-release)
+[**Abstract**](#abstract) · [**Benchmark**](#benchmark) · [**Leaderboard**](#leaderboard) · [**Dataset Release**](#dataset-release)
 
 <img src="assets/memory-timeline.svg" alt="EMBER-Bench connects past events to persistent task states and next actions, and traces a given action back to its historical cause." width="100%">
 
@@ -91,8 +91,6 @@ The benchmark uses fixed decision points in recorded human activities. It evalua
 ## Leaderboard
 
 Complete main results from the manuscript's Table 2, evaluated under the **video-history setting (V)**. All values are **accuracy (%)**. The table includes **16 models** and the mean performance of **two human evaluators**.
-
-[Download the full leaderboard (CSV)](assets/results/main-results.csv)
 
 <table>
 <thead>
