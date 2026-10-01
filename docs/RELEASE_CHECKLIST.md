@@ -2,9 +2,9 @@
 
 This checklist records the scope of the initial website and evaluation-code release. Detailed local test evidence is kept in `REVIEW.md` at repository root.
 
-- [x] Compare all 170 score values in Table 2 against the submission manuscript, including the human row.
-- [x] Label the manuscript as under review; do not imply ICLR acceptance.
-- [x] Use the exact paper title and anonymous citation.
+- [x] Compare all 170 score values in Table 2 against the paper, including the human row.
+- [x] Keep website and repository copy free of conference submission and review-status promotion.
+- [x] Keep the unpublished paper PDF, download links, and premature citation out of the public site.
 - [x] Identify privileged annotation ablations and distinguish them from main results.
 - [x] State the public dataset release status accurately; do not invent download links.
 - [x] Run offline evaluation tests and synthetic transport smoke tests without paid APIs.

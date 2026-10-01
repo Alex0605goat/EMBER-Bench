@@ -1,5 +1,5 @@
 {
-  "_note": "Registry snapshot supplied with the submission. Availability and API deployment IDs are not guaranteed. Defaults use provider endpoints; custom gateways require an explicit base URL override or --config. api_model optionally overrides the wire model name.",
+  "_note": "Registry snapshot supplied with the source package. Availability and API deployment IDs are not guaranteed. Defaults use provider endpoints; custom gateways require an explicit base URL override or --config. api_model optionally overrides the wire model name.",
   "defaults": {
     "temperature": 0,
     "max_output_tokens": 16384,

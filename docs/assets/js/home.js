@@ -1,7 +1,6 @@
 (() => {
   'use strict';
   const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
-  if (!tabs.length) return;
   function selectTab(tab) {
     tabs.forEach(item => {
       const selected = item === tab;
@@ -25,4 +24,46 @@
       }
     });
   });
+
+  // Content and real scores remain visible without JS or under reduced motion.
+  const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const revealTargets = Array.from(document.querySelectorAll('.section-heading, .intro-grid, .scenario, .resource, .finding, .original-figure'));
+  const scoreTargets = Array.from(document.querySelectorAll('.score-bar'));
+  let observer = null;
+  let scoreObserver = null;
+  function showAll() {
+    revealTargets.forEach(element => element.classList.add('is-visible'));
+    scoreTargets.forEach(element => element.classList.add('score-visible'));
+  }
+  function updateMotion() {
+    if (observer) observer.disconnect();
+    if (scoreObserver) scoreObserver.disconnect();
+    observer = scoreObserver = null;
+    document.documentElement.classList.toggle('js-motion', !preference.matches);
+    if (preference.matches || !('IntersectionObserver' in window)) { showAll(); return; }
+    revealTargets.forEach(element => element.classList.add('reveal'));
+    scoreTargets.forEach(element => element.classList.add('score-reveal'));
+    observer = new IntersectionObserver((entries, actualObserver) => entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('is-visible'); actualObserver.unobserve(entry.target); }
+    }), { threshold: .08, rootMargin: '0px 0px 28px 0px' });
+    scoreObserver = new IntersectionObserver((entries, actualObserver) => entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('score-visible'); actualObserver.unobserve(entry.target); }
+    }), { threshold: .5 });
+    revealTargets.forEach(element => {
+      if (!element.classList.contains('is-visible')) observer.observe(element);
+    });
+    scoreTargets.forEach(element => {
+      if (!element.classList.contains('score-visible')) scoreObserver.observe(element);
+    });
+  }
+  preference.addEventListener('change', updateMotion);
+  updateMotion();
+  function pageHide(event) {
+    if (event.persisted) return;
+    if (observer) observer.disconnect();
+    if (scoreObserver) scoreObserver.disconnect();
+    preference.removeEventListener('change', updateMotion);
+    window.removeEventListener('pagehide', pageHide);
+  }
+  window.addEventListener('pagehide', pageHide);
 })();

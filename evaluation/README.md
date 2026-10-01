@@ -59,7 +59,7 @@ Each model directory contains `manifest.json`, `attempts.jsonl`, `selected.jsonl
 
 The paper describes a 5 Hz full-prefix visual sequence followed by the decision frame, uniform downsampling to fit interface constraints, no audio, per-question requests, and failed answers scored incorrect. This runner uses a fixed 5→3→1 ladder and shared output limit. The frozen table contains **699 questions per model (548 P / 151 C)**, not the synthetic fixture or an arbitrary subset.
 
-The supplied legacy package notes also described model-specific token limits, prompt/fps handling, and reasoning settings in the historical experiments. Those notes are not enough to reconstruct the original provider runs, and are not asserted as additional verified claims about the submitted paper. Current endpoint-specific thinking parameters are visible in `configs/models.json`; wire formats and provider controls differ even when the task prompt is shared.
+The supplied legacy package notes also described model-specific token limits, prompt/fps handling, and reasoning settings in the historical experiments. Those notes are not enough to reconstruct the original provider runs, and are not asserted as additional verified claims about the paper. Current endpoint-specific thinking parameters are visible in `configs/models.json`; wire formats and provider controls differ even when the task prompt is shared.
 
 The released parser accepts a single `Final Answer: [A]` letter, with harmless Markdown decoration, plus compatibility fallbacks for a naked final-line letter or `B. <exact option text>`. It rejects conflicting final answers and echoed/multiple-choice templates. These parser corrections and compatibility fallbacks are disclosed implementation behavior, not proof of identity to the frozen parser.
 
@@ -80,4 +80,4 @@ Hashes establish internal consistency, not dataset authenticity, leakage-free pr
 - [Release review notes](docs/REVIEW.md)
 - [MIT license](LICENSE)
 
-Report reproducible issues through [the repository](https://github.com/Alex0605goat/EMBER-Bench/issues). The paper is an ICLR 2027 submission under review; this package makes no acceptance claim.
+Report reproducible issues through [the repository](https://github.com/Alex0605goat/EMBER-Bench/issues).

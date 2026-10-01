@@ -16,11 +16,11 @@ Open `http://localhost:8000/` for the homepage and `http://localhost:8000/leader
 
 - `docs/index.html`: benchmark narrative and figures.
 - `docs/leaderboard.html`: leaderboard layout and table fallback.
-- `docs/assets/`: styles, interaction scripts, illustrations, and the submission manuscript.
+- `docs/assets/`: styles, interaction scripts, and original illustrations.
 - `docs/data/site.json`: repository ownership and repository links.
 - `docs/data/leaderboard.json`: paper results. Check the file's provenance metadata and score field names before editing.
 
-After a reviewed data edit, run `python scripts/sync_leaderboard.py` to regenerate the CSV and static HTML fallback from the JSON. `validate_site.py` pins the verified paper-table and manuscript fingerprints; an intentional correction or new manuscript revision also requires an evidence-backed fingerprint update. New protocols belong in a separately labeled results section.
+After a reviewed data edit, run `python scripts/sync_leaderboard.py` to regenerate the CSV and static HTML fallback from the JSON. `validate_site.py` pins the verified paper-table fingerprint and excludes the unpublished paper; an intentional correction or new manuscript revision also requires an evidence-backed fingerprint update. New protocols belong in a separately labeled results section.
 
 The Table 2 paper snapshot is a separate protocol from new unified-runner evaluations. Do not replace paper numbers with a rerun or a synthetic test output. See [leaderboard review](LEADERBOARD.md).
 
@@ -61,4 +61,10 @@ python -m pytest tests -q
 
 Before release, inspect both pages at desktop and mobile widths. Exercise search, source filtering, score sorting, CSV export, keyboard focus, and reduced motion. Confirm the human reference is excluded from model rank and missing data never displays as zero.
 
-Design references: [SWE-bench](https://www.swebench.com/), [MMMU](https://mmmu-benchmark.github.io/), and [LongVideoBench](https://longvideobench.github.io/) informed the resource navigation, benchmark explanation, and results structure. Styling and memory illustrations are original to this site.
+## Visual design and motion
+
+The site uses white and soft-gray surfaces, large system sans-serif type, graphite text, and warm amber accents. Buttons use at least 16px labels and 44px interaction targets. Both pages share the same continuous EMBER-Bench wordmark and E-shaped circuit icon.
+
+`docs/assets/js/memory-scene.js` animates the conceptual SVG with layered orbits, three causal signal paths, node activation, and gentle pointer depth. It pauses outside the viewport and while the page is hidden. Reduced motion displays the original static composition. `home.js` progressively reveals content and score bars; the text, figures, and actual score values remain available without JavaScript. Research figure contents must remain unmodified.
+
+Design references: [Apple](https://www.apple.com/iphone/) informed the spacious light presentation and restrained motion. [SWE-bench](https://www.swebench.com/), [MMMU](https://mmmu-benchmark.github.io/), and [LongVideoBench](https://longvideobench.github.io/) informed resource navigation, benchmark explanation, and results structure. Styling and memory illustrations are original to this site.

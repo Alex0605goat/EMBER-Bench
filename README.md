@@ -6,13 +6,11 @@
 
 **Which past event still matters for the next action?**
 
-[Homepage](https://Alex0605goat.github.io/EMBER-Bench/) · [Leaderboard](https://Alex0605goat.github.io/EMBER-Bench/leaderboard.html) · [Paper](docs/assets/EMBER-Bench.pdf) · [Evaluation code](evaluation/README.md)
+[Homepage](https://Alex0605goat.github.io/EMBER-Bench/) · [Leaderboard](https://Alex0605goat.github.io/EMBER-Bench/leaderboard.html) · [Evaluation code](evaluation/README.md)
 
 <img src="assets/memory-timeline.svg" alt="Past events leave persistent consequences that constrain the next action; causal traceback identifies the supporting event." width="100%">
 
 **189 household tasks · 699 questions · 4 memory scenarios · 2 reasoning directions**
-
-*ICLR 2027 submission, under review. Anonymous authors.*
 
 </div>
 
@@ -34,7 +32,7 @@ Original figures: [Benchmark overview](docs/assets/figures/benchmark_overview_fi
 
 The 151 traceback questions are paired with prediction questions from the same decision points. Fine-grained event and causal annotations support the construction and diagnostic ablations.
 
-## Results from the submission manuscript
+## Results from the paper
 
 The interactive [leaderboard](https://Alex0605goat.github.io/EMBER-Bench/leaderboard.html) contains the complete Table 2 snapshot: all 16 models, 10 accuracy columns, and a separate human reference. Search models, filter source class, sort each score column, and export CSV.
 
@@ -67,7 +65,7 @@ Submit reproducible candidate results through a pull request using the [leaderbo
 ## Website and repository
 
 ```text
-docs/                     GitHub Pages homepage, leaderboard, and paper
+docs/                     GitHub Pages homepage, leaderboard, and original figures
 evaluation/               Runner, model registry, tests, synthetic fixture, and guides
 scripts/validate_site.py  Local link and paper-table consistency checks
 .github/workflows/        CI validation and GitHub Pages deployment
@@ -81,16 +79,5 @@ python -m http.server 8000 --directory docs
 ```
 
 Open `http://localhost:8000/`. See [website development and deployment](docs/DEVELOPMENT.md) for GitHub Pages setup and account alignment. Repository links use the owner **Alex0605goat**, matching the authenticated GitHub account.
-
-## Citation
-
-```bibtex
-@misc{emberbench2026,
-  title = {EMBER-Bench: Benchmarking Cross-Event Causal Memory in Long-Horizon Embodied Tasks},
-  author = {Anonymous},
-  year = {2026},
-  note = {ICLR 2027 submission, under review}
-}
-```
 
 The evaluation software is provided under its [MIT license](evaluation/LICENSE). This software license does not establish a license for the manuscript or the pending dataset release.

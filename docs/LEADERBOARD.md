@@ -2,7 +2,7 @@
 
 ## Paper snapshot
 
-The initial leaderboard transcribes **Table 2** of *EMBER-Bench: Benchmarking Cross-Event Causal Memory in Long-Horizon Embodied Tasks*, the ICLR 2027 submission manuscript. It contains 16 model rows and the mean of two human evaluators. All scores are accuracy percentages rounded to one decimal place as reported in the manuscript.
+The initial leaderboard transcribes **Table 2** of *EMBER-Bench: Benchmarking Cross-Event Causal Memory in Long-Horizon Embodied Tasks*. It contains 16 model rows and the mean of two human evaluators. All scores are accuracy percentages rounded to one decimal place as reported in the paper.
 
 - **Overall:** micro accuracy across all 699 questions.
 - **P:** next-action prediction, 548 questions across L1-L4.
