@@ -12,6 +12,6 @@ This checklist records the scope of the initial website and evaluation-code rele
 - [x] Check repository for credentials, private file paths, caches, and generated run artifacts.
 - [x] Validate site links, data, project-path hosting, and CSV export.
 - [x] Inspect desktop/mobile screenshots, sorting, filters, keyboard focus, and reduced motion.
-- [ ] Confirm repository owner and Pages deployment permissions.
+- [x] Confirm repository owner and Pages deployment permissions.
 
 Limitations: the released catalog and complete media are needed for an actual benchmark run. Offline tests validate the runner implementation and transport contracts; they do not reproduce or independently verify the manuscript's model results. Live provider availability is outside the offline test scope.
