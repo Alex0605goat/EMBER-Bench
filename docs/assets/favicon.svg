@@ -1,1 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="#111419"/><circle cx="32" cy="32" r="22" fill="none" stroke="#efac72" stroke-width="2" opacity=".5"/><path d="M31 10c8 14 19 17 17 31-1 11-18 18-27 7-7-9-2-18 5-23-1 8 1 12 5 14 5-8 3-15 0-29Z" fill="#efac72"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>EMBER memory circuit</title>
+  <rect width="64" height="64" rx="14" fill="#101316"/>
+  <g fill="none" stroke="#efad79" stroke-width="2" opacity=".65">
+    <path d="M19 11h26l8 8v26l-8 8H19l-8-8V19Z"/>
+    <path d="M6 32h5m42 0h5M32 6v5m0 42v5"/>
+  </g>
+  <path d="M42 20H23v24h19M23 32h14" fill="none" stroke="#efad79" stroke-width="4" stroke-linecap="square"/>
+  <g fill="#efad79">
+    <circle cx="43" cy="20" r="3"/>
+    <circle cx="38" cy="32" r="3"/>
+    <circle cx="43" cy="44" r="3"/>
+  </g>
+</svg>
