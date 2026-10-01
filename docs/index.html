@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="EMBER-Bench evaluates cross-event causal memory in long-horizon embodied tasks: 189 household tasks, 699 questions, four memory scenarios, and two reasoning directions.">
+  <meta name="theme-color" content="#101316">
+  <meta property="og:title" content="EMBER-Bench · Cross-event causal memory">
+  <meta property="og:description" content="Which past event still matters for the next action? An egocentric benchmark for long-horizon embodied reasoning.">
+  <meta property="og:type" content="website">
+  <title>EMBER-Bench · Cross-event causal memory</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/common.js" defer></script>
+  <script src="assets/js/home.js" defer></script>
+  <noscript><style>.nav-links{display:flex!important;position:static!important;padding:0!important;border:0!important;font-size:10px!important;gap:10px!important;background:none!important}.mobile-nav-toggle{display:none!important}.nav{height:auto!important;min-height:67px;flex-wrap:wrap;padding-top:14px!important;padding-bottom:14px!important}.direction-tabs{display:none!important}#panel-traceback{display:block!important}</style></noscript>
+</head>
+<body id="top">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav class="container nav" aria-label="Main navigation">
+    <a href="index.html" class="brand" aria-label="EMBER-Bench home"><img src="assets/favicon.svg" alt="" width="31" height="31">EMBER<span>–Bench</span></a>
+    <button class="mobile-nav-toggle" aria-expanded="false" aria-controls="main-navigation">Menu</button>
+    <div class="nav-links" id="main-navigation">
+      <a href="index.html" aria-current="page">Overview</a>
+      <a href="#benchmark" class="home-benchmark">Benchmark</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="assets/EMBER-Bench.pdf">Paper <span aria-hidden="true">↗</span></a>
+      <a href="https://github.com/Alex0605goat/EMBER-Bench" data-repo-path="" class="repo-link"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .8a11.4 11.4 0 0 0-3.6 22.2c.6.1.8-.2.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.7-1.3-1.7-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.4-1.3-5.4-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2A11.5 11.5 0 0 1 12 5.4c1 0 2 .1 2.9.4 2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.4 5.9.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6A11.4 11.4 0 0 0 12 .8Z"/></svg>GitHub</a>
+    </div>
+  </nav>
+</header>
+<main id="main">
+  <section class="hero container" aria-labelledby="hero-title">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">An egocentric memory benchmark</div>
+        <h1 id="hero-title">The past is still<br>part of <em>the present.</em></h1>
+        <p class="full-name">Benchmarking Cross-Event Causal Memory in Long-Horizon Embodied Tasks</p>
+        <p>Which past event still matters for the next action? EMBER-Bench tests whether models turn the continuing consequences of history into decisions.</p>
+        <div class="hero-actions">
+          <a href="leaderboard.html" class="button button-primary">Explore the leaderboard <span class="arrow" aria-hidden="true">↗</span></a>
+          <a href="assets/EMBER-Bench.pdf" class="button">Read the paper <span class="arrow" aria-hidden="true">↗</span></a>
+        </div>
+        <div class="status-line"><i aria-hidden="true"></i>ICLR 2027 submission · Under review · Anonymous authors</div>
+      </div>
+      <div class="hero-visual">
+        <svg viewBox="0 0 620 540" role="img" aria-labelledby="memory-title memory-desc">
+          <title id="memory-title">A field of memories converging on the present decision</title>
+          <desc id="memory-desc">Decorative schematic. Past actions, persistent consequences, and changing task states connect to a current decision. It does not depict benchmark data.</desc>
+          <defs>
+            <radialGradient id="core-glow"><stop offset="0" stop-color="#efad79" stop-opacity=".24"/><stop offset=".35" stop-color="#d88954" stop-opacity=".09"/><stop offset="1" stop-color="#d88954" stop-opacity="0"/></radialGradient>
+            <radialGradient id="ember-core"><stop offset="0" stop-color="#ffe6c8"/><stop offset=".55" stop-color="#efad79"/><stop offset="1" stop-color="#b36c46"/></radialGradient>
+            <linearGradient id="causal-path" x1="80" y1="100" x2="470" y2="375" gradientUnits="userSpaceOnUse"><stop stop-color="#efad79" stop-opacity=".25"/><stop offset=".6" stop-color="#efad79"/><stop offset="1" stop-color="#efad79" stop-opacity=".45"/></linearGradient>
+            <filter id="node-glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="4"/></filter>
+            <pattern id="memory-grid" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".65" fill="#6c7378" opacity=".23"/></pattern>
+          </defs>
+          <rect x="16" y="17" width="580" height="494" fill="url(#memory-grid)"/>
+          <circle cx="310" cy="270" r="229" fill="url(#core-glow)"/>
+          <g fill="none" stroke="#58636b" stroke-width=".7" opacity=".35"><ellipse cx="310" cy="270" rx="247" ry="131" transform="rotate(-35 310 270)"/><ellipse cx="310" cy="270" rx="233" ry="163" transform="rotate(24 310 270)"/><circle cx="310" cy="270" r="210"/><circle cx="310" cy="270" r="142"/><path d="M30 270h560M310 24v488" stroke-dasharray="2 9"/></g>
+          <g class="memory-ring" fill="none" stroke="#efad79" stroke-width=".8" opacity=".25"><circle cx="310" cy="270" r="236" stroke-dasharray="85 360 35 480"/><circle cx="310" cy="270" r="174" stroke-dasharray="40 90 7 410"/></g>
+          <g class="memory-ring reverse" fill="#6f7b82"><circle cx="112" cy="239" r="2"/><circle cx="473" cy="156" r="2.5"/><circle cx="337" cy="470" r="2"/><circle cx="424" cy="423" r="3"/><circle cx="186" cy="126" r="3"/><circle cx="509" cy="303" r="2"/></g>
+          <g fill="none" stroke="#6c767d" stroke-width=".8" opacity=".4"><path d="M102 149 190 202 214 346 310 270 428 352 513 217 404 129 310 270 190 202 337 108"/><path d="m90 349 124-3 41 99 173-93 118 63M190 202l-43 73 67 71M310 270l59 139 59-57M310 270l54-87 40-54"/></g>
+          <g fill="none" stroke="url(#causal-path)" stroke-width="1.4"><path d="M102 149 190 202 310 270 428 352"/><path d="M214 346 310 270 404 129" opacity=".65"/></g>
+          <path class="memory-flow" d="M102 149 190 202 310 270 428 352" fill="none" stroke="#f4bd8e" stroke-width="1.5" opacity=".7"/>
+          <g fill="#101316" stroke="#6c767d" stroke-width="1"><circle cx="214" cy="346" r="5"/><circle cx="404" cy="129" r="5"/><circle cx="513" cy="217" r="4"/><circle cx="337" cy="108" r="3"/><circle cx="147" cy="275" r="3"/><circle cx="90" cy="349" r="3"/><circle cx="255" cy="445" r="4"/><circle cx="369" cy="409" r="3"/><circle cx="546" cy="415" r="3"/></g>
+          <g fill="#efad79"><circle cx="102" cy="149" r="3.5"/><circle cx="190" cy="202" r="4.5"/><circle cx="428" cy="352" r="4.5"/></g>
+          <g fill="none" stroke="#efad79" stroke-width=".7" opacity=".35"><circle cx="102" cy="149" r="10"/><circle cx="190" cy="202" r="13"/><circle cx="428" cy="352" r="13"/></g>
+          <circle class="memory-pulse" cx="310" cy="270" r="44" fill="#efad79" opacity=".08"/>
+          <circle cx="310" cy="270" r="25" fill="#efad79" opacity=".35" filter="url(#node-glow)"/>
+          <circle cx="310" cy="270" r="12" fill="url(#ember-core)"/>
+          <circle cx="310" cy="270" r="23" fill="none" stroke="#efad79" stroke-width=".8" opacity=".55"/>
+          <g font-family="ui-monospace,Consolas,monospace" font-size="9" letter-spacing="1.1"><text x="77" y="122" fill="#92999d">PAST EVENT</text><text x="140" y="229" fill="#b99476">LASTING CONSEQUENCE</text><text x="334" y="267" fill="#efad79">CURRENT</text><text x="334" y="281" fill="#efad79">DECISION</text><text x="424" y="378" fill="#92999d">NEXT ACTION</text><text x="381" y="106" fill="#657178">CHANGED STATE</text><text x="180" y="374" fill="#657178">TASK PROGRESS</text></g>
+          <g fill="none" stroke="#566068" stroke-width=".6"><path d="M32 55V34h21M565 34h21v21M32 479v21h21M565 500h21v-21"/></g>
+          <g font-family="ui-monospace,Consolas,monospace" font-size="8" letter-spacing="1.5" fill="#58636b"><text x="46" y="51">MEMORY FIELD / 01</text><text x="489" y="485">t → t + 1</text></g>
+        </svg>
+        <div class="visual-caption"><span>HISTORY → STATE → ACTION</span><span>CONCEPTUAL SCHEMATIC</span></div>
+      </div>
+    </div>
+  </section>
+  <div class="container">
+    <div class="metrics" aria-label="Benchmark at a glance">
+      <div class="metric"><div class="metric-number">189</div><div class="metric-label">Newly recorded household tasks</div></div>
+      <div class="metric"><div class="metric-number">699</div><div class="metric-label">History-dependent questions</div></div>
+      <div class="metric"><div class="metric-number">4</div><div class="metric-label">Memory scenarios, L1–L4</div></div>
+      <div class="metric"><div class="metric-number">16</div><div class="metric-label">Evaluated multimodal models</div></div>
+    </div>
+  </div>
+  <section class="section container" id="memory" aria-labelledby="memory-heading">
+    <div class="intro-grid">
+      <div><div class="section-index">01 / The question behind the benchmark</div><h2 id="memory-heading">Memory is more<br>than <em>a record.</em></h2></div>
+      <div class="intro-copy"><p>Past events keep changing the world after they leave view. A completed prerequisite, an unresolved mistake, or a moved object can still constrain what should happen next.</p><p>EMBER-Bench asks models to connect those events to the present: <strong>predict the next action</strong>, then <strong>trace that action back to its historical cause</strong>. The challenge is cross-event causal reasoning, beyond historical retrieval.</p><a href="assets/EMBER-Bench.pdf" class="inline-link">Read the motivation <span aria-hidden="true">↗</span></a></div>
+    </div>
+    <div class="schematic">
+      <div class="schematic-top"><span class="schematic-label">A MEMORY DEPENDENCY, IN TWO DIRECTIONS</span><div class="direction-tabs" role="tablist" aria-label="Reasoning direction"><button id="tab-prediction" role="tab" aria-selected="true" aria-controls="panel-prediction">Predict the action · P</button><button id="tab-traceback" role="tab" aria-selected="false" aria-controls="panel-traceback" tabindex="-1">Trace the cause · C</button></div></div>
+      <div class="event-chain">
+        <div class="event-cell"><div class="event-tag">Earlier / Historical event</div><h3>The mug was moved.</h3><p>While the performer is elsewhere, another person places the mug inside a cupboard.</p></div>
+        <span class="chain-arrow" aria-hidden="true">→</span>
+        <div class="event-cell"><div class="event-tag">Now / Persistent state</div><h3>The countertop is empty.</h3><p>The task is to prepare tea. The current view alone does not reveal where the mug went.</p></div>
+        <span class="chain-arrow" aria-hidden="true">→</span>
+        <div class="event-cell ember"><div class="event-tag">Next / History-grounded action</div><h3>Retrieve the mug.</h3><p>Its changed location determines the next useful action: open the cupboard.</p></div>
+      </div>
+      <div class="direction-answer" id="panel-prediction" role="tabpanel" aria-labelledby="tab-prediction" tabindex="0"><div class="answer-tag">PREDICTION →</div><div><h4>Given the goal and history, what should happen next?</h4><p>Select the appropriate next action from four candidates. The earlier relocation makes retrieving the mug from the cupboard necessary.</p></div></div>
+      <div class="direction-answer" id="panel-traceback" role="tabpanel" aria-labelledby="tab-traceback" tabindex="0" hidden><div class="answer-tag">← TRACEBACK</div><div><h4>Given the reference action, which past event makes it necessary?</h4><p>Select the video interval containing the relevant historical event from four labeled intervals. Here, it is the mug’s relocation.</p></div></div>
+    </div>
+    <p class="schematic-note">ILLUSTRATIVE SCHEMATIC · This hypothetical example explains the task; it is not a released dataset item.</p>
+  </section>
+  <section class="section container" id="benchmark" aria-labelledby="benchmark-heading">
+    <div class="section-heading"><div><div class="section-index">02 / Benchmark design</div><h2 id="benchmark-heading">Four ways the past<br>shapes <em>what comes next.</em></h2></div><p>Newly designed and recorded egocentric household tasks, with fine-grained action and causal-chain annotations.</p></div>
+    <div class="scenario-list">
+      <article class="scenario"><div class="scenario-level">L1</div><div><h3>Task Progress Memory</h3><p>Track completed steps and prerequisites, even when task progress is no longer visible.</p></div><svg class="scenario-glyph" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 34 18 24 29 15 42 7" fill="none" stroke="#efad79" stroke-width="1"/><g fill="#101316" stroke="#efad79"><circle cx="6" cy="34" r="3"/><circle cx="18" cy="24" r="3"/><circle cx="29" cy="15" r="3"/></g><circle cx="42" cy="7" r="3" fill="#efad79"/><path d="M6 42h36" stroke="#30363a"/></svg></article>
+      <article class="scenario"><div class="scenario-level">L2</div><div><h3>Self-induced Anomaly Memory</h3><p>Remember the lasting consequences of your own mistakes and the recovery still required.</p></div><svg class="scenario-glyph" viewBox="0 0 48 48" aria-hidden="true"><path d="M7 24h11l6-10 7 20 5-10h6" fill="none" stroke="#e78775" stroke-width="1.2"/><circle cx="24" cy="24" r="19" fill="none" stroke="#30363a"/><circle cx="24" cy="14" r="3" fill="#e78775"/></svg></article>
+      <article class="scenario"><div class="scenario-level">L3</div><div><h3>External Intervention Memory</h3><p>Update object location, identity, or availability after another person changes the scene.</p></div><svg class="scenario-glyph" viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="9" width="14" height="14" rx="2" fill="none" stroke="#a2c9bd" stroke-dasharray="2 3"/><rect x="29" y="27" width="14" height="14" rx="2" fill="none" stroke="#a2c9bd"/><path d="M14 26c0 10 5 12 12 12m-4-4 4 4-4 4" fill="none" stroke="#a2c9bd"/></svg></article>
+      <article class="scenario"><div class="scenario-level">L4</div><div><h3>Compound Long-Horizon Memory</h3><p>Maintain multiple historical constraints across intervening activities, anomalies, and interventions.</p></div><svg class="scenario-glyph" viewBox="0 0 48 48" aria-hidden="true"><path d="m6 9 17 10 18-9M23 19l-9 20m9-20 15 18M6 9l8 30 24-2 3-27" fill="none" stroke="#efad79" opacity=".6"/><g fill="#101316" stroke="#efad79"><circle cx="6" cy="9" r="3"/><circle cx="41" cy="10" r="3"/><circle cx="14" cy="39" r="3"/><circle cx="38" cy="37" r="3"/></g><circle cx="23" cy="19" r="4" fill="#efad79"/></svg></article>
+    </div>
+    <a href="assets/figures/overview.png" class="figure-box" aria-label="Open the benchmark overview figure at full resolution"><img src="assets/figures/overview.png" alt="Paper overview of the four memory scenarios and the paired next-action prediction and causal traceback questions." loading="lazy" width="1760" height="924"></a>
+    <div class="figure-caption"><span>Benchmark overview from the manuscript. P asks what to do next; C identifies the historical interval supporting the given action.</span><a href="assets/figures/overview.png">FULL RESOLUTION ↗</a></div>
+    <div class="protocol-grid">
+      <div class="protocol-item"><h3><code>P</code> &nbsp; Next-action prediction · 548 questions</h3><p>Given a task goal, pre-decision video history, and current frame, select the next action from four candidates across L1–L4.</p></div>
+      <div class="protocol-item"><h3><code>C</code> &nbsp; Causal traceback · 151 questions</h3><p>Given the reference next action, select the relevant historical interval from four video-labeled candidates. Eligible L2–L4 questions are paired with prediction questions.</p></div>
+    </div>
+    <p class="schematic-note">Fixed decision points in recorded human activities · Four-option multiple choice · Accuracy (%) · Offline reasoning evaluation</p>
+  </section>
+  <section class="section results-section" aria-labelledby="findings-heading"><div class="container">
+    <div class="section-heading"><div><div class="section-index">03 / What the results reveal</div><h2 id="findings-heading">A visible gap.<br>An <em>unresolved challenge.</em></h2></div><a href="leaderboard.html" class="button">See all 16 models <span class="arrow" aria-hidden="true">↗</span></a></div>
+    <div class="findings-grid">
+      <div class="score-comparison"><header>Video-history setting / Overall accuracy</header><div class="score-row human"><span class="score-label">Human reference · mean of 2 evaluators</span><strong>98.3<span>%</span></strong><div class="score-bar" style="--value:98.3%"><span></span></div></div><div class="score-row model"><span class="score-label">Best evaluated model · Gemini 3.8 Flash</span><strong>61.2<span>%</span></strong><div class="score-bar" style="--value:61.2%"><span></span></div></div><div class="score-row"><span class="score-label">Random choice</span><strong>25.0<span>%</span></strong><div class="score-bar" style="--value:25%;opacity:.35"><span></span></div></div><p class="comparison-note">Manuscript Table 2 · Accuracy across 699 questions. Human performance is a reference and is excluded from model ranking.</p></div>
+      <div><article class="finding"><h3>Remembering the cause does not ensure the right next action.</h3><p>At matched decision points, correct traceback is not associated with correct next-action prediction in the reported analysis.</p></article><article class="finding"><h3>The content of memory matters.</h3><p>Across six models, action logs add <span class="gain">+1.6 points</span> on average. Privileged cause-and-consequence annotations add a further <span class="gain">+13.0 points</span> on top of the logs.</p><p style="margin-top:8px;font-size:10px">The annotations diagnose information needs; they provide privileged causal information.</p></article><article class="finding"><h3>Compound memories are especially demanding.</h3><p>12 of 16 models obtain their lowest next-action accuracy in L4, where multiple distant dependencies must be maintained together.</p></article></div>
+    </div>
+  </div></section>
+  <section class="section container" id="construction" aria-labelledby="construction-heading">
+    <div class="section-heading"><div><div class="section-index">04 / From recordings to causal questions</div><h2 id="construction-heading">Built around<br><em>history that matters.</em></h2></div><p>Human-led task design, recording, and annotation, with model-assisted QA verification and iterative quality review.</p></div>
+    <a href="assets/figures/construction.png" class="figure-box" aria-label="Open the dataset construction figure at full resolution"><img src="assets/figures/construction.png" alt="Benchmark construction pipeline: task design and collection, filtering, fine-grained action and causal annotation, paired question construction, and human quality review." loading="lazy" width="4287" height="2094"></a>
+    <div class="figure-caption"><span>Quality checks cover historical evidence, answer uniqueness, option bias, and input boundaries.</span><a href="assets/figures/construction.png">FULL RESOLUTION ↗</a></div>
+    <details style="margin-top:29px"><summary style="color:var(--muted);font-size:12px;cursor:pointer">Explore the dataset statistics</summary><a href="assets/figures/dataset-statistics.png" class="figure-box" aria-label="Open dataset statistics at full resolution"><img src="assets/figures/dataset-statistics.png" alt="Dataset distributions of household scenes and activities, input durations, action vocabulary, question counts, and task lengths." loading="lazy" width="1760" height="848"></a><p class="schematic-note">QA counts per level: L1 205 · L2 171 · L3 188 · L4 135. These are question counts, not task counts.</p></details>
+  </section>
+  <section class="section container" id="resources" aria-labelledby="resources-heading">
+    <div class="section-heading"><div><div class="section-index">05 / Research resources</div><h2 id="resources-heading">Study it. Evaluate it.<br><em>Build on it.</em></h2></div><p>The manuscript and evaluation toolkit are available here. The public dataset release is pending.</p></div>
+    <div class="resources-grid">
+      <article class="resource"><div class="resource-top"><span>01 / MANUSCRIPT</span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.3" aria-hidden="true"><path d="M6 3h8l4 4v14H6ZM14 3v5h4M9 12h6m-6 4h6"/></svg></div><h3>Read the paper</h3><p>Motivation, construction, experimental protocol, complete results, and diagnostic analysis.</p><a href="assets/EMBER-Bench.pdf">Open the submission PDF <span aria-hidden="true">↗</span></a></article>
+      <article class="resource"><div class="resource-top"><span>02 / EVALUATION</span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.3" aria-hidden="true"><path d="m7 6-5 6 5 6m10-12 5 6-5 6M14 3l-4 18"/></svg></div><h3>Run the benchmark</h3><p>Evaluation code, input preparation, inference adapters, scoring, and reproducibility instructions.</p><a href="https://github.com/Alex0605goat/EMBER-Bench/blob/main/evaluation/README.md" data-repo-path="blob/main/evaluation/README.md">Explore the evaluation guide <span aria-hidden="true">↗</span></a></article>
+      <article class="resource"><div class="resource-top"><span>03 / DATASET</span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.3" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v7c0 4 16 4 16 0V5M4 12v7c0 4 16 4 16 0v-7"/></svg></div><h3>The next release</h3><p>Full videos, questions, and annotations will be announced in the repository with access instructions.</p><span class="pending-badge">Public dataset release pending</span></article>
+    </div>
+  </section>
+</main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-brand">EMBER–Bench<p>Cross-event causal memory for long-horizon embodied reasoning.</p></div><div class="footer-links"><span>Anonymous authors · Under review</span><a href="https://github.com/Alex0605goat/EMBER-Bench" data-repo-path="">GitHub ↗</a><a href="#top" class="back-to-top">BACK TO TOP ↑</a></div></div></footer>
+</body>
+</html>

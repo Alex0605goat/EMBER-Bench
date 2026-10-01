@@ -1,0 +1,77 @@
+[
+  {
+    "question_id": "synthetic_1",
+    "objective": "SYNTHETIC_SCENARIO_1: fixture only.",
+    "qa_type": "NA",
+    "level": "L1",
+    "gold": "A",
+    "current_frame": "current.jpg",
+    "history_video": "history.mp4",
+    "current_sha256": "92ac28ca8b4170afbececfaa935c45a9c405c226468f9e3a6d0211f3ca53fec7",
+    "history_sha256": "511fca9fcb7e2d0755b9440eb3a9b3800bab17916d34f65355bc8cd390137cc2",
+    "m3_text": "Completed subtask: moved a synthetic object.",
+    "incidents": [],
+    "is_paired": false,
+    "options": [
+      "Synthetic action A",
+      "Synthetic action B",
+      "Synthetic action C",
+      "Synthetic action D"
+    ]
+  },
+  {
+    "question_id": "synthetic_2",
+    "objective": "SYNTHETIC_SCENARIO_2: fixture only.",
+    "qa_type": "NA",
+    "level": "L2",
+    "gold": "B",
+    "current_frame": "current.jpg",
+    "history_video": "history.mp4",
+    "current_sha256": "92ac28ca8b4170afbececfaa935c45a9c405c226468f9e3a6d0211f3ca53fec7",
+    "history_sha256": "511fca9fcb7e2d0755b9440eb3a9b3800bab17916d34f65355bc8cd390137cc2",
+    "m3_text": "Completed subtask: moved a synthetic object.",
+    "incidents": [],
+    "is_paired": true,
+    "options": [
+      "Synthetic action A",
+      "Synthetic action B",
+      "Synthetic action C",
+      "Synthetic action D"
+    ]
+  },
+  {
+    "question_id": "synthetic_3",
+    "objective": "SYNTHETIC_SCENARIO_3: fixture only.",
+    "qa_type": "CB",
+    "level": "L2",
+    "gold": "A",
+    "current_frame": "current.jpg",
+    "history_video": "history.mp4",
+    "current_sha256": "92ac28ca8b4170afbececfaa935c45a9c405c226468f9e3a6d0211f3ca53fec7",
+    "history_sha256": "511fca9fcb7e2d0755b9440eb3a9b3800bab17916d34f65355bc8cd390137cc2",
+    "m3_text": "Completed subtask: moved a synthetic object.",
+    "incidents": [],
+    "is_paired": false,
+    "known_action": "Synthetic corrective action"
+  },
+  {
+    "question_id": "synthetic_4",
+    "objective": "SYNTHETIC_SCENARIO_4: fixture only.",
+    "qa_type": "NA",
+    "level": "L3",
+    "gold": "D",
+    "current_frame": "current.jpg",
+    "history_video": "history.mp4",
+    "current_sha256": "92ac28ca8b4170afbececfaa935c45a9c405c226468f9e3a6d0211f3ca53fec7",
+    "history_sha256": "511fca9fcb7e2d0755b9440eb3a9b3800bab17916d34f65355bc8cd390137cc2",
+    "m3_text": "Completed subtask: moved a synthetic object.",
+    "incidents": [],
+    "is_paired": false,
+    "options": [
+      "Synthetic action A",
+      "Synthetic action B",
+      "Synthetic action C",
+      "Synthetic action D"
+    ]
+  }
+]

@@ -1,148 +1,92 @@
 <div align="center">
 
-<h1 align="center">
-<picture>
-<source media="(max-width: 600px)" srcset="assets/title-mobile.svg">
-<img src="assets/title.svg" alt="EMBER-Bench: an Egocentric Memory Benchmark for Embodied Reasoning over cross-event causality in long-horizon household tasks" width="100%">
-</picture>
-</h1>
+# EMBER-Bench
 
-[**Abstract**](README.md#abstract) · [**Benchmark**](README.md#benchmark) · [**Leaderboard**](README.md#leaderboard) · [**Dataset Release**](README.md#dataset-release)
+### Benchmarking Cross-Event Causal Memory in Long-Horizon Embodied Tasks
 
-<img src="assets/memory-timeline.svg" alt="EMBER-Bench connects past events to persistent task states and next actions, and traces a given action back to its historical cause." width="100%">
+**Which past event still matters for the next action?**
 
-<table>
-<tr>
-<td align="center"><strong>189</strong><br>Household tasks</td>
-<td align="center"><strong>699</strong><br>QA pairs</td>
-<td align="center"><strong>4</strong><br>Memory scenarios</td>
-<td align="center"><strong>2</strong><br>Reasoning directions</td>
-</tr>
-</table>
+[Homepage](https://Alex0605goat.github.io/EMBER-Bench/) · [Leaderboard](https://Alex0605goat.github.io/EMBER-Bench/leaderboard.html) · [Paper](docs/assets/EMBER-Bench.pdf) · [Evaluation code](evaluation/README.md)
+
+<img src="assets/memory-timeline.svg" alt="Past events leave persistent consequences that constrain the next action; causal traceback identifies the supporting event." width="100%">
+
+**189 household tasks · 699 questions · 4 memory scenarios · 2 reasoning directions**
+
+*ICLR 2027 submission, under review. Anonymous authors.*
 
 </div>
 
-## News
+## What EMBER-Bench measures
 
-> **The full EMBER-Bench dataset will be released soon.**
->
-> This page presents the benchmark, its construction, and the main findings. Download links and release instructions will be added here when the full dataset is available.
+EMBER-Bench evaluates cross-event causal memory in recorded egocentric household activities. Models must use the continuing consequences of earlier events to decide what to do next after those events leave view. At fixed decision points, four-option questions evaluate **next-action prediction (P)** and **causal traceback (C)**. This is an offline reasoning benchmark; the task does not execute a robot policy.
 
-- **September 2026** — Introducing **EMBER-Bench**: cross-event causal memory across task progress, self-induced anomalies, external interventions, and compound long-horizon tasks.
+| Scenario | Memory requirement | P questions | C questions |
+|---|---|---:|---:|
+| **L1 · Task Progress** | Completed steps and prerequisites | 205 | — |
+| **L2 · Self-induced Anomaly** | Lingering consequences of the performer's mistakes | 113 | 58 |
+| **L3 · External Intervention** | Object state changes caused by another person | 128 | 60 |
+| **L4 · Compound Long-Horizon** | Multiple dependencies across intervening activities | 102 | 33 |
+| **Total** | | **548** | **151** |
 
-## Abstract
+The 151 traceback questions are paired with prediction questions from the same decision points. Fine-grained event and causal annotations support the construction and diagnostic ablations.
 
-Lifelong physical agents must reason over extended interactions where past events continue to shape the world long after they disappear from view. Beyond recalling what happened, agents must infer how history changes the current state and constrains future actions. Yet existing embodied and video-memory benchmarks largely focus on historical retrieval and summary, leaving such history-dependent causal reasoning underexplored. We introduce EMBER-Bench, an egocentric benchmark for cross-event causal reasoning in long-horizon embodied tasks, for which we newly created the task design, video recording, and data annotation. It contains 189 household tasks and 699 QA pairs, spanning task progression, failure recovery, external interventions, and ultra-long-horizon tasks with distant dependencies and prerequisites, with fine-grained event and causal-chain annotations. EMBER-Bench evaluates reasoning in both directions: next-action prediction selects the next action from history, and causal traceback, given that action, identifies the historical event that makes it necessary. Input ablations that add action logs or privileged cause-and-consequence annotations to the video indicate which kind of historical information models fail to use. Across 16 models, the best reaches 61.2% overall, against 98.3% for human evaluators. At paired decision points, correct traceback is not associated with correct next-action prediction. Adding action logs yields a gain of 1.7 points, whereas cause-and-consequence annotations yield an additional gain of 13.0 points on top of that. These results suggest that converting past events into constraints on the current action remains a key difficulty for long-horizon embodied agents.
+## Results from the submission manuscript
 
-## Benchmark
+The interactive [leaderboard](https://Alex0605goat.github.io/EMBER-Bench/leaderboard.html) contains the complete Table 2 snapshot: all 16 models, 10 accuracy columns, and a separate human reference. Search models, filter source class, sort each score column, and export CSV.
 
-**Which past event still matters for the next action?** EMBER-Bench evaluates whether models can use the continuing consequences of earlier events to make decisions after those events leave view.
+| Reference | Overall | Prediction · P | Traceback · C |
+|---|---:|---:|---:|
+| Human, mean of 2 evaluators | **98.3** | 97.8 | 100.0 |
+| Gemini 3.8 Flash, best evaluated model | **61.2** | 58.4 | 71.5 |
+| Random-choice reference | 25.0 | 25.0 | 25.0 |
 
-<a href="assets/figures/overview.png"><img src="assets/figures/overview.png" alt="Overview of EMBER-Bench: four memory scenarios and paired next-action prediction and causal traceback questions." width="100%"></a>
+All values are accuracy (%). Human and chance references are excluded from model ranks. Overall accuracy counts all 699 questions; unanswered items are incorrect.
 
-*Four memory scenarios, with complementary questions about what to do next and which earlier event makes that action necessary. Click any figure to view it at full resolution.*
+Across six models in the information ablation, action logs add **1.6 percentage points** on average. Privileged cause-and-consequence annotations add a further **13.0 points**. Correct traceback does not ensure a correct next-action prediction in the paired analysis. These findings concern the manuscript's reported settings; privileged annotations are diagnostic inputs.
 
-### Four memory scenarios
+## Evaluate a model
 
-| Level | Scenario | What the model must remember |
-|:--:|---|---|
-| **L1** | **Task Progress Memory** | Completed steps and prerequisites that determine the current task state. |
-| **L2** | **Self-induced Anomaly Memory** | The lasting consequences of the performer's own mistakes and outstanding recovery obligations. |
-| **L3** | **External Intervention Memory** | Third-party changes to the location, identity, or availability of task-relevant objects. |
-| **L4** | **Compound Long-Horizon Memory** | Self-induced anomalies and external interventions within the same long-horizon task episode. |
+The complete public dataset release is **pending**. The evaluator accepts an actual catalog and pre-decision media once available. An offline synthetic smoke test verifies the runner without the dataset or paid API calls.
 
-### Two reasoning directions
+```bash
+cd evaluation
+python -m pip install -r requirements.txt
+python ember_eval.py --help
+```
 
-| Next-action prediction · **P** | Causal traceback · **C** |
-|---|---|
-| Given the task goal, pre-decision history, and current frame, select the appropriate next action. | Given the reference next action, identify the historical event that makes it necessary. |
-| **548 questions** across L1–L4. | **151 questions** across L2–L4, paired with a subset of the prediction questions. |
+See [evaluation README](evaluation/README.md) for the offline smoke test, catalog specification, model configuration, API-key environment variables, evaluation conditions, resume behavior, and result export. [Quick start](evaluation/QUICKSTART.md) and [usage reference](evaluation/docs/USAGE.md) provide complete commands.
 
-The benchmark uses fixed decision points in recorded human activities. It evaluates history-grounded reasoning through four-option questions, rather than measuring a robot's closed-loop execution.
+**Protocol boundary:** the provided unified runner differs from some model settings used for the frozen paper results. See the protocol comparison in the evaluation documentation. Running this code is not a claim of exact reproduction of Table 2. Offline tests and synthetic results must never be submitted as benchmark scores.
 
-## How the Benchmark Is Built
+Submit reproducible candidate results through a pull request using the [leaderboard review guide](docs/LEADERBOARD.md). Review is required before any website update.
 
-<a href="assets/figures/construction.png"><img src="assets/figures/construction.png" alt="Human-led, model-assisted benchmark construction: task design and recording, filtering, action and causal annotation, paired question construction, and iterative quality control." width="100%"></a>
+## Website and repository
 
-*New task design and video recording, followed by action and causal annotation, paired QA construction, and iterative quality review.*
+```text
+docs/                     GitHub Pages homepage, leaderboard, and paper
+evaluation/               Runner, model registry, tests, synthetic fixture, and guides
+scripts/validate_site.py  Local link and paper-table consistency checks
+.github/workflows/        CI validation and GitHub Pages deployment
+REVIEW.md                 Release audit and verification evidence
+```
 
-- **Newly collected household tasks.** Task scenarios, recordings, and annotations are created for this benchmark.
-- **Action and causal annotations.** Fine-grained records connect actions, anomalies, consequences, and recovery obligations.
-- **Memory dependence.** Questions are reviewed so that the relevant history is needed to distinguish the correct next action.
-- **Quality control.** Human review checks historical evidence, answer uniqueness, option bias, and input boundaries.
+Preview locally:
 
-## Dataset at a Glance
+```bash
+python -m http.server 8000 --directory docs
+```
 
-<a href="assets/figures/dataset-statistics.png"><img src="assets/figures/dataset-statistics.png" alt="Dataset statistics showing household scenes and activities, input duration, action vocabulary, questions per level, and task length." width="100%"></a>
+Open `http://localhost:8000/`. See [website development and deployment](docs/DEVELOPMENT.md) for GitHub Pages setup and account alignment. Repository links use the owner **Alex0605goat**, matching the authenticated GitHub account.
 
-*Distribution of household scenes and activities, input duration, action vocabulary, question types, and task lengths.*
+## Citation
 
-| Property | Full EMBER-Bench |
-|---|---|
-| Household tasks / original videos | **189** |
-| Total QA pairs | **699** |
-| Next-action prediction questions | **548** |
-| Causal traceback questions | **151** |
-| Matched prediction–traceback decision points | **151** |
-| Memory scenarios | **L1–L4** |
-| Input viewpoint | **Egocentric video** |
-| Answer format | **Four-option multiple choice** |
+```bibtex
+@misc{emberbench2026,
+  title = {EMBER-Bench: Benchmarking Cross-Event Causal Memory in Long-Horizon Embodied Tasks},
+  author = {Anonymous},
+  year = {2026},
+  note = {ICLR 2027 submission, under review}
+}
+```
 
-## Leaderboard
-
-Complete main results from the manuscript's Table 2, evaluated under the **video-history setting (V)**. All values are **accuracy (%)**. The table includes **16 models** and the mean performance of **two human evaluators**.
-
-<table>
-<thead>
-<tr>
-<th rowspan="2" align="left">Model</th>
-<th rowspan="2">Overall</th>
-<th colspan="5">Next-action prediction (P)</th>
-<th colspan="4">Causal traceback (C)</th>
-</tr>
-<tr>
-<th>All</th><th>L1</th><th>L2</th><th>L3</th><th>L4</th>
-<th>All</th><th>L2</th><th>L3</th><th>L4</th>
-</tr>
-</thead>
-<tbody>
-<tr><td><em>Human (mean of 2)</em></td><td align="right">98.3</td><td align="right">97.8</td><td align="right">100.0</td><td align="right">96.9</td><td align="right">97.7</td><td align="right">94.6</td><td align="right">100.0</td><td align="right">100.0</td><td align="right">100.0</td><td align="right">100.0</td></tr>
-<tr><th colspan="11" align="left">Closed-source models</th></tr>
-<tr><td>Gemini 3.8 Flash</td><td align="right"><img src="assets/results/highlights/best-61-2.svg" alt="61.2" width="38" height="21"></td><td align="right"><img src="assets/results/highlights/best-58-4.svg" alt="58.4" width="38" height="21"></td><td align="right"><img src="assets/results/highlights/best-68-8.svg" alt="68.8" width="38" height="21"></td><td align="right"><img src="assets/results/highlights/best-48-7.svg" alt="48.7" width="38" height="21"></td><td align="right"><img src="assets/results/highlights/best-57-8.svg" alt="57.8" width="38" height="21"></td><td align="right"><img src="assets/results/highlights/best-49-0.svg" alt="49.0" width="38" height="21"></td><td align="right"><img src="assets/results/highlights/best-71-5.svg" alt="71.5" width="38" height="21"></td><td align="right"><img src="assets/results/highlights/best-60-3.svg" alt="60.3" width="38" height="21"></td><td align="right"><img src="assets/results/highlights/best-88-3.svg" alt="88.3" width="38" height="21"></td><td align="right">60.6</td></tr>
-<tr><td>Gemini 3.1 Pro</td><td align="right">51.5</td><td align="right">50.7</td><td align="right">61.0</td><td align="right">47.8</td><td align="right">40.6</td><td align="right">46.1</td><td align="right">54.3</td><td align="right">48.3</td><td align="right">68.3</td><td align="right">39.4</td></tr>
-<tr><td>doubao-seed-pro2.1</td><td align="right">49.8</td><td align="right">45.4</td><td align="right">55.6</td><td align="right">38.9</td><td align="right">43.8</td><td align="right">34.3</td><td align="right">65.6</td><td align="right">55.2</td><td align="right">76.7</td><td align="right"><img src="assets/results/highlights/best-63-6.svg" alt="63.6" width="38" height="21"></td></tr>
-<tr><td>Qwen3.8 Max</td><td align="right">47.5</td><td align="right">44.2</td><td align="right">52.2</td><td align="right">39.8</td><td align="right">44.5</td><td align="right">32.4</td><td align="right">59.6</td><td align="right">56.9</td><td align="right">68.3</td><td align="right">48.5</td></tr>
-<tr><td>GPT-6 Sol</td><td align="right">46.2</td><td align="right">44.2</td><td align="right">57.1</td><td align="right">41.6</td><td align="right">32.8</td><td align="right">35.3</td><td align="right">53.6</td><td align="right">51.7</td><td align="right">58.3</td><td align="right">48.5</td></tr>
-<tr><td>Qwen3.8 Omni Flash</td><td align="right">45.6</td><td align="right">44.3</td><td align="right">55.1</td><td align="right">36.3</td><td align="right">43.8</td><td align="right">32.4</td><td align="right">50.3</td><td align="right">43.1</td><td align="right">56.7</td><td align="right">51.5</td></tr>
-<tr><td>Qwen3.8 Flash</td><td align="right">36.8</td><td align="right">34.7</td><td align="right">39.0</td><td align="right">31.9</td><td align="right">35.9</td><td align="right">27.5</td><td align="right">44.4</td><td align="right">43.1</td><td align="right">50.0</td><td align="right">36.4</td></tr>
-<tr><th colspan="11" align="left">Open-source models</th></tr>
-<tr><td>Qwen3.5 397B-A17B</td><td align="right">45.4</td><td align="right">43.8</td><td align="right">52.7</td><td align="right">42.5</td><td align="right">38.3</td><td align="right">34.3</td><td align="right">51.0</td><td align="right">48.3</td><td align="right">61.7</td><td align="right">36.4</td></tr>
-<tr><td>Qwen3.5 35B-A3B</td><td align="right">39.5</td><td align="right">38.5</td><td align="right">45.9</td><td align="right">34.5</td><td align="right">35.2</td><td align="right">32.4</td><td align="right">43.0</td><td align="right">41.4</td><td align="right">50.0</td><td align="right">33.3</td></tr>
-<tr><td>Qwen3.5 122B-A10B</td><td align="right">38.2</td><td align="right">35.8</td><td align="right">45.4</td><td align="right">29.2</td><td align="right">34.4</td><td align="right">25.5</td><td align="right">47.0</td><td align="right">44.8</td><td align="right">56.7</td><td align="right">33.3</td></tr>
-<tr><td>Qwen3.8 27B</td><td align="right">38.1</td><td align="right">36.7</td><td align="right">42.4</td><td align="right">31.0</td><td align="right">38.3</td><td align="right">29.4</td><td align="right">43.0</td><td align="right">41.4</td><td align="right">48.3</td><td align="right">36.4</td></tr>
-<tr><td>MiMo V2.6 Pro</td><td align="right">35.8</td><td align="right">33.4</td><td align="right">39.5</td><td align="right">30.1</td><td align="right">33.6</td><td align="right">24.5</td><td align="right">44.4</td><td align="right">41.4</td><td align="right">51.7</td><td align="right">36.4</td></tr>
-<tr><td>Qwen3-VL 32B</td><td align="right">34.5</td><td align="right">32.5</td><td align="right">41.0</td><td align="right">27.4</td><td align="right">28.9</td><td align="right">25.5</td><td align="right">41.7</td><td align="right">43.1</td><td align="right">46.7</td><td align="right">30.3</td></tr>
-<tr><td>MiMo V2.6 Flash</td><td align="right">32.3</td><td align="right">28.5</td><td align="right">32.2</td><td align="right">27.4</td><td align="right">27.3</td><td align="right">23.5</td><td align="right">46.4</td><td align="right">44.8</td><td align="right">51.7</td><td align="right">39.4</td></tr>
-<tr><td>Qwen3-VL 8B</td><td align="right">29.0</td><td align="right">29.9</td><td align="right">33.7</td><td align="right">30.1</td><td align="right">31.2</td><td align="right">20.6</td><td align="right">25.8</td><td align="right">29.3</td><td align="right">28.3</td><td align="right">15.2</td></tr>
-<tr><td>Qwen3-VL 235B-A22B</td><td align="right">28.9</td><td align="right">26.6</td><td align="right">32.7</td><td align="right">27.4</td><td align="right">18.8</td><td align="right">23.5</td><td align="right">37.1</td><td align="right">37.9</td><td align="right">40.0</td><td align="right">30.3</td></tr>
-</tbody>
-</table>
-
-**P** = next-action prediction; **C** = causal traceback. Models are grouped as in the manuscript and sorted by overall accuracy within each group. **Red** marks the best model result in each column; the human reference is excluded from model ranking. Unanswered items after retries are scored as incorrect. Random-choice accuracy is **25%**.
-
-## Key Findings
-
-- **Remembering the cause does not ensure the right next action.** At matched decision points, correct traceback is not associated with correct prediction in the reported analysis.
-- **The content of memory matters.** Across the six models in the information ablation, action logs add **1.7 percentage points** on average; cause-and-consequence annotations add a further **13.0 points**.
-- **Compound scenarios remain difficult.** **12 of the 16 models** obtain their lowest next-action accuracy on L4.
-
-*The cause-and-consequence annotations in the ablation are privileged information used for diagnosis; this setting does not measure independent causal inference.*
-
-## Dataset Release
-
-**The dataset will be released soon.** The complete EMBER-Bench release will be announced in the [News](README.md#news) section, together with download and usage instructions.
-
-
----
-
-<p align="center"><strong>EMBER-Bench</strong><br>Cross-event causal memory for long-horizon embodied reasoning.</p>
+The evaluation software is provided under its [MIT license](evaluation/LICENSE). This software license does not establish a license for the manuscript or the pending dataset release.

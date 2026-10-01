@@ -1,0 +1,22 @@
+name: Validate website and evaluation
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Install evaluation and test dependencies
+        run: python -m pip install -r evaluation/requirements.txt pytest
+      - name: Validate website and paper results
+        run: python scripts/validate_site.py
+      - name: Run offline evaluation tests
+        working-directory: evaluation
+        run: python -m pytest tests -q
+

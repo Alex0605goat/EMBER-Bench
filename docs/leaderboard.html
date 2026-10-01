@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Complete EMBER-Bench leaderboard: 16 multimodal models and a human reference, with overall, next-action prediction, and causal traceback accuracy across L1–L4.">
+  <meta name="theme-color" content="#101316">
+  <meta property="og:title" content="EMBER-Bench · Leaderboard">
+  <meta property="og:description" content="Explore all manuscript results for cross-event causal memory in long-horizon embodied tasks.">
+  <meta property="og:type" content="website">
+  <title>Leaderboard · EMBER-Bench</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/common.js" defer></script>
+  <script src="assets/js/leaderboard.js" defer></script>
+  <noscript><style>.nav-links{display:flex!important;position:static!important;padding:0!important;border:0!important;font-size:10px!important;gap:10px!important;background:none!important}.mobile-nav-toggle{display:none!important}.nav{height:auto!important;min-height:67px;flex-wrap:wrap;padding-top:14px!important;padding-bottom:14px!important}.board-toolbar{display:none}</style></noscript>
+</head>
+<body id="top">
+<a class="skip-link" href="#main">Skip to results</a>
+<header class="site-header">
+  <nav class="container nav" aria-label="Main navigation">
+    <a href="index.html" class="brand" aria-label="EMBER-Bench home"><img src="assets/favicon.svg" alt="" width="31" height="31">EMBER<span>–Bench</span></a>
+    <button class="mobile-nav-toggle" aria-expanded="false" aria-controls="main-navigation">Menu</button>
+    <div class="nav-links" id="main-navigation">
+      <a href="index.html">Overview</a><a href="index.html#benchmark" class="home-benchmark">Benchmark</a><a href="leaderboard.html" aria-current="page">Leaderboard</a><a href="assets/EMBER-Bench.pdf">Paper <span aria-hidden="true">↗</span></a>
+      <a href="https://github.com/Alex0605goat/EMBER-Bench" data-repo-path="" class="repo-link"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .8a11.4 11.4 0 0 0-3.6 22.2c.6.1.8-.2.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.7-1.3-1.7-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.4-1.3-5.4-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2A11.5 11.5 0 0 1 12 5.4c1 0 2 .1 2.9.4 2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.4 5.9.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6A11.4 11.4 0 0 0 12 .8Z"/></svg>GitHub</a>
+    </div>
+  </nav>
+</header>
+<main class="container" id="main">
+  <div class="page-top">
+    <div class="eyebrow">Main results / Video-history setting · V</div>
+    <div class="leaderboard-heading"><div><h1>Memory, <em>measured.</em></h1><p>All results from manuscript Table 2. Accuracy (%) on next-action prediction and causal traceback, with every reported scenario breakdown.</p></div><a class="button" href="data/leaderboard.csv" download="EMBER-Bench-leaderboard.csv">Download CSV <span class="arrow" aria-hidden="true">↓</span></a></div>
+  </div>
+  <div class="leaderboard-summary" aria-label="Leaderboard summary"><span><strong>16</strong> models</span><span><strong>699</strong> questions</span><span><strong>61.2%</strong> best model overall</span><span><strong>98.3%</strong> human overall</span><span class="summary-note">ICLR 2027 submission · Under review</span></div>
+  <section class="board-panel" aria-label="Model leaderboard">
+    <noscript><p class="noscript-note">All scores are available below. Enable JavaScript to search, filter, and sort; the CSV download also works without JavaScript.</p></noscript>
+    <div class="board-toolbar">
+      <div class="search-field"><label for="model-search" class="visually-hidden">Search models</label><svg class="search-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="6.5" cy="6.5" r="4.5"/><path d="m10 10 4 4"/></svg><input id="model-search" type="search" placeholder="Search models…" autocomplete="off" disabled></div>
+      <div class="filter-group" role="group" aria-label="Filter model class"><button data-filter="all" aria-pressed="true" disabled>All models</button><button data-filter="closed" aria-pressed="false" disabled>Closed-source</button><button data-filter="open" aria-pressed="false" disabled>Open-source</button></div>
+      <span class="toolbar-status" id="results-status" role="status" aria-live="polite">16 of 16 models</span>
+    </div>
+    <div class="table-wrap" tabindex="0" role="region" aria-label="Leaderboard table; scroll horizontally for all scenario scores" aria-describedby="table-notes">
+      <table class="leaderboard-table">
+        <caption class="visually-hidden">EMBER-Bench video-history accuracy. Human reference is unranked. Ten score columns: overall, five prediction columns, and four traceback columns.</caption>
+        <thead>
+          <tr class="column-groups"><th class="rank-cell" rowspan="2" scope="col">#</th><th class="model-cell" rowspan="2" scope="col">Model</th><th scope="col" rowspan="2" data-column="overall" aria-sort="descending"><button data-sort="overall" aria-label="Sort by Overall, ascending" disabled>Overall <span class="sort-mark" aria-hidden="true">↓</span></button></th><th class="p-group" colspan="5" scope="colgroup">Next-action prediction · P</th><th class="c-group" colspan="4" scope="colgroup">Causal traceback · C</th></tr>
+          <tr>
+            <th scope="col" class="p-start" aria-sort="none"><button data-sort="p_all" aria-label="Sort by P All, descending" disabled>All <span class="sort-mark" aria-hidden="true">↕</span></button></th>
+            <th scope="col" aria-sort="none"><button data-sort="p_l1" aria-label="Sort by P L1, descending" disabled>L1 <span class="sort-mark" aria-hidden="true">↕</span></button></th>
+            <th scope="col" aria-sort="none"><button data-sort="p_l2" aria-label="Sort by P L2, descending" disabled>L2 <span class="sort-mark" aria-hidden="true">↕</span></button></th>
+            <th scope="col" aria-sort="none"><button data-sort="p_l3" aria-label="Sort by P L3, descending" disabled>L3 <span class="sort-mark" aria-hidden="true">↕</span></button></th>
+            <th scope="col" aria-sort="none"><button data-sort="p_l4" aria-label="Sort by P L4, descending" disabled>L4 <span class="sort-mark" aria-hidden="true">↕</span></button></th>
+            <th scope="col" class="c-start" aria-sort="none"><button data-sort="c_all" aria-label="Sort by C All, descending" disabled>All <span class="sort-mark" aria-hidden="true">↕</span></button></th>
+            <th scope="col" aria-sort="none"><button data-sort="c_l2" aria-label="Sort by C L2, descending" disabled>L2 <span class="sort-mark" aria-hidden="true">↕</span></button></th>
+            <th scope="col" aria-sort="none"><button data-sort="c_l3" aria-label="Sort by C L3, descending" disabled>L3 <span class="sort-mark" aria-hidden="true">↕</span></button></th>
+            <th scope="col" aria-sort="none"><button data-sort="c_l4" aria-label="Sort by C L4, descending" disabled>L4 <span class="sort-mark" aria-hidden="true">↕</span></button></th>
+          </tr>
+        </thead>
+        <tbody id="leaderboard-body">
+          <!-- STATIC_RESULTS_START -->
+          <tr data-name="Human (mean of 2)" data-category="human" class="human-row">
+            <th scope="row" class="rank-cell" aria-label="Human reference, unranked">—</th><th scope="row" class="model-cell">Human (mean of 2)<span class="model-class">Human reference</span></th>
+            <td data-key="overall" class="overall-cell">98.3</td><td data-key="p_all" class="p-start">97.8</td><td data-key="p_l1">100.0</td><td data-key="p_l2">96.9</td><td data-key="p_l3">97.7</td><td data-key="p_l4">94.6</td><td data-key="c_all" class="c-start">100.0</td><td data-key="c_l2">100.0</td><td data-key="c_l3">100.0</td><td data-key="c_l4">100.0</td>
+          </tr>
+          <tr data-name="Gemini 3.8 Flash" data-category="closed">
+            <th scope="row" class="rank-cell">1</th><th scope="row" class="model-cell">Gemini 3.8 Flash<span class="model-class">Closed-source</span></th>
+            <td data-key="overall" class="overall-cell best">61.2</td><td data-key="p_all" class="p-start best">58.4</td><td data-key="p_l1" class="best">68.8</td><td data-key="p_l2" class="best">48.7</td><td data-key="p_l3" class="best">57.8</td><td data-key="p_l4" class="best">49.0</td><td data-key="c_all" class="c-start best">71.5</td><td data-key="c_l2" class="best">60.3</td><td data-key="c_l3" class="best">88.3</td><td data-key="c_l4">60.6</td>
+          </tr>
+          <tr data-name="Gemini 3.1 Pro Preview" data-category="closed">
+            <th scope="row" class="rank-cell">2</th><th scope="row" class="model-cell">Gemini 3.1 Pro Preview<span class="model-class">Closed-source</span></th>
+            <td data-key="overall" class="overall-cell">51.5</td><td data-key="p_all" class="p-start">50.7</td><td data-key="p_l1">61.0</td><td data-key="p_l2">47.8</td><td data-key="p_l3">40.6</td><td data-key="p_l4">46.1</td><td data-key="c_all" class="c-start">54.3</td><td data-key="c_l2">48.3</td><td data-key="c_l3">68.3</td><td data-key="c_l4">39.4</td>
+          </tr>
+          <tr data-name="doubao-seed-pro2.1" data-category="closed">
+            <th scope="row" class="rank-cell">3</th><th scope="row" class="model-cell">doubao-seed-pro2.1<span class="model-class">Closed-source</span></th>
+            <td data-key="overall" class="overall-cell">49.8</td><td data-key="p_all" class="p-start">45.4</td><td data-key="p_l1">55.6</td><td data-key="p_l2">38.9</td><td data-key="p_l3">43.8</td><td data-key="p_l4">34.3</td><td data-key="c_all" class="c-start">65.6</td><td data-key="c_l2">55.2</td><td data-key="c_l3">76.7</td><td data-key="c_l4" class="best">63.6</td>
+          </tr>
+          <tr data-name="Qwen3.8 Max" data-category="closed">
+            <th scope="row" class="rank-cell">4</th><th scope="row" class="model-cell">Qwen3.8 Max<span class="model-class">Closed-source</span></th>
+            <td data-key="overall" class="overall-cell">47.5</td><td data-key="p_all" class="p-start">44.2</td><td data-key="p_l1">52.2</td><td data-key="p_l2">39.8</td><td data-key="p_l3">44.5</td><td data-key="p_l4">32.4</td><td data-key="c_all" class="c-start">59.6</td><td data-key="c_l2">56.9</td><td data-key="c_l3">68.3</td><td data-key="c_l4">48.5</td>
+          </tr>
+          <tr data-name="GPT-6 Sol" data-category="closed">
+            <th scope="row" class="rank-cell">5</th><th scope="row" class="model-cell">GPT-6 Sol<span class="model-class">Closed-source</span></th>
+            <td data-key="overall" class="overall-cell">46.2</td><td data-key="p_all" class="p-start">44.2</td><td data-key="p_l1">57.1</td><td data-key="p_l2">41.6</td><td data-key="p_l3">32.8</td><td data-key="p_l4">35.3</td><td data-key="c_all" class="c-start">53.6</td><td data-key="c_l2">51.7</td><td data-key="c_l3">58.3</td><td data-key="c_l4">48.5</td>
+          </tr>
+          <tr data-name="Qwen3.8 Omni Flash" data-category="closed">
+            <th scope="row" class="rank-cell">6</th><th scope="row" class="model-cell">Qwen3.8 Omni Flash<span class="model-class">Closed-source</span></th>
+            <td data-key="overall" class="overall-cell">45.6</td><td data-key="p_all" class="p-start">44.3</td><td data-key="p_l1">55.1</td><td data-key="p_l2">36.3</td><td data-key="p_l3">43.8</td><td data-key="p_l4">32.4</td><td data-key="c_all" class="c-start">50.3</td><td data-key="c_l2">43.1</td><td data-key="c_l3">56.7</td><td data-key="c_l4">51.5</td>
+          </tr>
+          <tr data-name="Qwen3.5 397B-A17B" data-category="open">
+            <th scope="row" class="rank-cell">7</th><th scope="row" class="model-cell">Qwen3.5 397B-A17B<span class="model-class">Open-source</span></th>
+            <td data-key="overall" class="overall-cell">45.4</td><td data-key="p_all" class="p-start">43.8</td><td data-key="p_l1">52.7</td><td data-key="p_l2">42.5</td><td data-key="p_l3">38.3</td><td data-key="p_l4">34.3</td><td data-key="c_all" class="c-start">51.0</td><td data-key="c_l2">48.3</td><td data-key="c_l3">61.7</td><td data-key="c_l4">36.4</td>
+          </tr>
+          <tr data-name="Qwen3.5 35B-A3B" data-category="open">
+            <th scope="row" class="rank-cell">8</th><th scope="row" class="model-cell">Qwen3.5 35B-A3B<span class="model-class">Open-source</span></th>
+            <td data-key="overall" class="overall-cell">39.5</td><td data-key="p_all" class="p-start">38.5</td><td data-key="p_l1">45.9</td><td data-key="p_l2">34.5</td><td data-key="p_l3">35.2</td><td data-key="p_l4">32.4</td><td data-key="c_all" class="c-start">43.0</td><td data-key="c_l2">41.4</td><td data-key="c_l3">50.0</td><td data-key="c_l4">33.3</td>
+          </tr>
+          <tr data-name="Qwen3.5 122B-A10B" data-category="open">
+            <th scope="row" class="rank-cell">9</th><th scope="row" class="model-cell">Qwen3.5 122B-A10B<span class="model-class">Open-source</span></th>
+            <td data-key="overall" class="overall-cell">38.2</td><td data-key="p_all" class="p-start">35.8</td><td data-key="p_l1">45.4</td><td data-key="p_l2">29.2</td><td data-key="p_l3">34.4</td><td data-key="p_l4">25.5</td><td data-key="c_all" class="c-start">47.0</td><td data-key="c_l2">44.8</td><td data-key="c_l3">56.7</td><td data-key="c_l4">33.3</td>
+          </tr>
+          <tr data-name="Qwen3.8 27B" data-category="open">
+            <th scope="row" class="rank-cell">10</th><th scope="row" class="model-cell">Qwen3.8 27B<span class="model-class">Open-source</span></th>
+            <td data-key="overall" class="overall-cell">38.1</td><td data-key="p_all" class="p-start">36.7</td><td data-key="p_l1">42.4</td><td data-key="p_l2">31.0</td><td data-key="p_l3">38.3</td><td data-key="p_l4">29.4</td><td data-key="c_all" class="c-start">43.0</td><td data-key="c_l2">41.4</td><td data-key="c_l3">48.3</td><td data-key="c_l4">36.4</td>
+          </tr>
+          <tr data-name="Qwen3.8 Flash" data-category="closed">
+            <th scope="row" class="rank-cell">11</th><th scope="row" class="model-cell">Qwen3.8 Flash<span class="model-class">Closed-source</span></th>
+            <td data-key="overall" class="overall-cell">36.8</td><td data-key="p_all" class="p-start">34.7</td><td data-key="p_l1">39.0</td><td data-key="p_l2">31.9</td><td data-key="p_l3">35.9</td><td data-key="p_l4">27.5</td><td data-key="c_all" class="c-start">44.4</td><td data-key="c_l2">43.1</td><td data-key="c_l3">50.0</td><td data-key="c_l4">36.4</td>
+          </tr>
+          <tr data-name="MiMo V2.6 Pro" data-category="open">
+            <th scope="row" class="rank-cell">12</th><th scope="row" class="model-cell">MiMo V2.6 Pro<span class="model-class">Open-source</span></th>
+            <td data-key="overall" class="overall-cell">35.8</td><td data-key="p_all" class="p-start">33.4</td><td data-key="p_l1">39.5</td><td data-key="p_l2">30.1</td><td data-key="p_l3">33.6</td><td data-key="p_l4">24.5</td><td data-key="c_all" class="c-start">44.4</td><td data-key="c_l2">41.4</td><td data-key="c_l3">51.7</td><td data-key="c_l4">36.4</td>
+          </tr>
+          <tr data-name="Qwen3-VL 32B" data-category="open">
+            <th scope="row" class="rank-cell">13</th><th scope="row" class="model-cell">Qwen3-VL 32B<span class="model-class">Open-source</span></th>
+            <td data-key="overall" class="overall-cell">34.5</td><td data-key="p_all" class="p-start">32.5</td><td data-key="p_l1">41.0</td><td data-key="p_l2">27.4</td><td data-key="p_l3">28.9</td><td data-key="p_l4">25.5</td><td data-key="c_all" class="c-start">41.7</td><td data-key="c_l2">43.1</td><td data-key="c_l3">46.7</td><td data-key="c_l4">30.3</td>
+          </tr>
+          <tr data-name="MiMo V2.6 Flash" data-category="open">
+            <th scope="row" class="rank-cell">14</th><th scope="row" class="model-cell">MiMo V2.6 Flash<span class="model-class">Open-source</span></th>
+            <td data-key="overall" class="overall-cell">32.3</td><td data-key="p_all" class="p-start">28.5</td><td data-key="p_l1">32.2</td><td data-key="p_l2">27.4</td><td data-key="p_l3">27.3</td><td data-key="p_l4">23.5</td><td data-key="c_all" class="c-start">46.4</td><td data-key="c_l2">44.8</td><td data-key="c_l3">51.7</td><td data-key="c_l4">39.4</td>
+          </tr>
+          <tr data-name="Qwen3-VL 8B" data-category="open">
+            <th scope="row" class="rank-cell">15</th><th scope="row" class="model-cell">Qwen3-VL 8B<span class="model-class">Open-source</span></th>
+            <td data-key="overall" class="overall-cell">29.0</td><td data-key="p_all" class="p-start">29.9</td><td data-key="p_l1">33.7</td><td data-key="p_l2">30.1</td><td data-key="p_l3">31.2</td><td data-key="p_l4">20.6</td><td data-key="c_all" class="c-start">25.8</td><td data-key="c_l2">29.3</td><td data-key="c_l3">28.3</td><td data-key="c_l4">15.2</td>
+          </tr>
+          <tr data-name="Qwen3-VL 235B-A22B" data-category="open">
+            <th scope="row" class="rank-cell">16</th><th scope="row" class="model-cell">Qwen3-VL 235B-A22B<span class="model-class">Open-source</span></th>
+            <td data-key="overall" class="overall-cell">28.9</td><td data-key="p_all" class="p-start">26.6</td><td data-key="p_l1">32.7</td><td data-key="p_l2">27.4</td><td data-key="p_l3">18.8</td><td data-key="p_l4">23.5</td><td data-key="c_all" class="c-start">37.1</td><td data-key="c_l2">37.9</td><td data-key="c_l3">40.0</td><td data-key="c_l4">30.3</td>
+          </tr>
+          <!-- STATIC_RESULTS_END -->
+        </tbody>
+      </table>
+    </div>
+    <div id="table-empty" class="table-empty" hidden>No models match your search. Try another name or model class.</div>
+    <div class="table-notes" id="table-notes"><p><span class="best-key">Amber values</span> mark the best model score in each column. P: 548 questions across L1–L4. C: 151 questions across L2–L4. Unanswered items after retries are incorrect; random-choice accuracy is 25%. Human reference is the mean of two evaluators.</p><p class="rank-note" id="rank-note">Ranks: Overall across all 16 models. Ties share rank. Human reference remains unranked.</p></div>
+  </section>
+  <div class="submission-banner"><div><h3>Reproduce a result or prepare a submission.</h3><p>The evaluation guide covers the data contract, inference, and scoring. Public dataset access is pending. New results require evidence and review before inclusion.</p></div><a href="https://github.com/Alex0605goat/EMBER-Bench/blob/main/docs/LEADERBOARD.md" data-repo-path="blob/main/docs/LEADERBOARD.md" class="button">Submission guide <span class="arrow" aria-hidden="true">↗</span></a></div>
+  <section class="board-details" aria-labelledby="reading-results">
+    <div class="section-heading"><div><div class="section-index">Reading the results</div><h2 id="reading-results">Two directions.<br><em>Four kinds of memory.</em></h2></div><a href="assets/EMBER-Bench.pdf" class="inline-link">Full experimental protocol <span aria-hidden="true">↗</span></a></div>
+    <div class="detail-grid"><div><h3>What the metrics measure</h3><p><strong style="color:var(--ember)">Prediction (P)</strong> selects a next action from four candidates given the goal, pre-decision video history, and current frame.</p><p><strong style="color:var(--mint)">Traceback (C)</strong> receives the reference next action and selects the historical interval that contains its supporting event. Four candidate intervals are labeled on the video.</p><p>Overall pools correctness across all 699 questions. L1 contains prediction questions only. C is paired with a subset of P in L2–L4.</p></div><div><h3>The scenario breakdown</h3><div class="legend-list"><div class="legend-item"><strong>L1 / TASK PROGRESS</strong>Completed steps and prerequisites.<br>205 P · 0 C</div><div class="legend-item"><strong>L2 / SELF-INDUCED ANOMALY</strong>Lasting mistakes and recovery obligations.<br>113 P · 58 C</div><div class="legend-item"><strong>L3 / EXTERNAL INTERVENTION</strong>Third-party changes to objects or state.<br>128 P · 60 C</div><div class="legend-item"><strong>L4 / COMPOUND LONG-HORIZON</strong>Multiple distant causal constraints.<br>102 P · 33 C</div></div></div></div>
+  </section>
+</main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-brand">EMBER–Bench<p>Manuscript Table 2 · Video-history setting (V) · Accuracy (%)</p></div><div class="footer-links"><a href="index.html">Overview</a><a href="data/leaderboard.json">Source data ↗</a><a href="https://github.com/Alex0605goat/EMBER-Bench" data-repo-path="">GitHub ↗</a><a href="#top" class="back-to-top">BACK TO TOP ↑</a></div></div></footer>
+</body>
+</html>
