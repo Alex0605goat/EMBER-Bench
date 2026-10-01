@@ -26,15 +26,20 @@ The Table 2 paper snapshot is a separate protocol from new unified-runner evalua
 
 ## Original scientific figures
 
-The homepage displays the three supplied source figures from `docs/assets/figures/`:
+The homepage displays the four supplied source figures from `docs/assets/figures/`:
 
-| Source PDF | Homepage placement | PNG dimensions |
+| Source file | Homepage placement | Display PNG dimensions |
 | --- | --- | --- |
-| `benchmark_overview_film.pdf` | Benchmark overview and task filmstrips | 3200 × 1688 |
+| `benchmark_overview_film.pdf` | Introduction and task filmstrips | 3200 × 1688 |
+| `benchmark_design.png` | Design: five-stage construction pipeline | 4287 × 2094 |
 | `section4_analysis.pdf` | Experimental and diagnostic analyses | 3200 × 1738 |
 | `benchmark_diversity.pdf` | Dataset coverage and distributions | 3200 × 1557 |
 
 Each source PDF is preserved byte for byte. Its same-name PNG is a full-page rendering at 3200 pixels wide, with the original aspect ratio, colors, and white canvas. Figures link directly to their original PDFs; `originals.json` records their SHA-256 checksums. Do not crop, redraw, recolor, or restyle the contents of these research figures to match the website theme.
+
+The original design PNG is also preserved byte for byte, including its transparent background. It is displayed on the website's white figure canvas and links directly to the original-resolution image. Its checksum and natural dimensions are verified during CI. The illustrated annotation schema describes the construction process; it is not the evaluation runner's catalog interface. Causal annotations provide privileged diagnostic information; the main video-history evaluation follows its documented visual-input protocol.
+
+The research masthead opens the homepage with the full title, a compact author byline, contribution markers, and official institution marks. Institution names use 22px desktop and 18px mobile text. Original institution assets and their official source URLs are documented in [institution mark sources](assets/institutions/SOURCES.md); the mobile layout uses HKU's standalone shield for clarity.
 
 The analysis figure includes history-length and event-distance breakdowns, information ablations, and paired prediction–traceback outcomes. The annotation ablation uses 151 paired prediction questions with privileged causal information. This diagnostic subset is distinct from the 699-question main leaderboard.
 

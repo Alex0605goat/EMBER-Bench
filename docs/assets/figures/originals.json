@@ -1,5 +1,5 @@
 {
-  "description": "Unmodified user-supplied original PDFs and faithful full-page PNG renders.",
+  "description": "Unmodified user-supplied original PDFs with faithful full-page PNG renders, and an unmodified original design PNG.",
   "figures": [
     {
       "source": "benchmark_overview_film.pdf",
@@ -21,6 +21,14 @@
       "render": "section4_analysis.png",
       "width": 3200,
       "height": 1738
+    }
+  ],
+  "images": [
+    {
+      "source": "benchmark_design.png",
+      "sha256": "550529af98472a2f90333d0bc46a1f4acd6dfe047f6f70a3b3f3bbbfdb523551",
+      "width": 4287,
+      "height": 2094
     }
   ]
 }

@@ -32,6 +32,8 @@ class Page(HTMLParser):
         for key in ('href', 'src'):
             if attrs.get(key):
                 self.links.append(attrs[key])
+        if attrs.get('srcset'):
+            self.links.extend(candidate.strip().split()[0] for candidate in attrs['srcset'].split(',') if candidate.strip())
 
 
 def main():
@@ -90,7 +92,8 @@ def main():
         assert cells == {key: expected[html.unescape(name)][key] for key in COLUMNS}, 'Static HTML table differs from paper JSON.'
     assert data.get('paper') is None, 'The unpublished paper must not have a download URL.'
     assert not (SITE / 'assets/EMBER-Bench.pdf').exists(), 'The unpublished paper must not be deployed.'
-    originals = json.loads((SITE / 'assets/figures/originals.json').read_text(encoding='utf-8'))['figures']
+    provenance = json.loads((SITE / 'assets/figures/originals.json').read_text(encoding='utf-8'))
+    originals = provenance['figures']
     expected_figures = {'benchmark_overview_film.pdf', 'benchmark_diversity.pdf', 'section4_analysis.pdf'}
     assert {f['source'] for f in originals} == expected_figures and len(originals) == 3
     published_pdfs = {p.relative_to(SITE).as_posix() for p in SITE.rglob('*.pdf')}
@@ -101,7 +104,14 @@ def main():
         png = (SITE / 'assets/figures' / figure['render']).read_bytes()
         assert png[:8] == b'\x89PNG\r\n\x1a\n'
         assert struct.unpack('>II', png[16:24]) == (figure['width'], figure['height']), 'Figure render dimensions changed.'
-    print(f'PASS: {len(pages)} HTML pages, {checked} local links, owner alignment, 17 rows / 170 paper scores in JSON, CSV and static HTML, unpublished paper exclusion, and 3 original figure PDFs/renders.')
+    images = provenance['images']
+    assert len(images) == 1 and images[0]['source'] == 'benchmark_design.png'
+    for figure in images:
+        png = (SITE / 'assets/figures' / figure['source']).read_bytes()
+        assert hashlib.sha256(png).hexdigest() == figure['sha256'], 'Original design image changed.'
+        assert png[:8] == b'\x89PNG\r\n\x1a\n'
+        assert struct.unpack('>II', png[16:24]) == (figure['width'], figure['height']), 'Original design image dimensions changed.'
+    print(f'PASS: {len(pages)} HTML pages, {checked} local links, owner alignment, 17 rows / 170 paper scores in JSON, CSV and static HTML, unpublished paper exclusion, 3 original figure PDFs/renders, and the original design PNG.')
 
 
 if __name__ == '__main__':

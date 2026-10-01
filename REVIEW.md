@@ -24,6 +24,8 @@ The paper's anonymous review URL states that review data and code are available.
 
 The user subsequently supplied three original figure PDFs: `benchmark_overview_film.pdf`, `benchmark_diversity.pdf`, and `section4_analysis.pdf`. The website uses full-page, 3200px-wide PNG renders with the original aspect ratios, colors, labels, and content. Each figure links to its unmodified source PDF. Byte identity against the supplied files was verified; checksums and render dimensions are recorded in `docs/assets/figures/originals.json` and checked during CI. The overview, dataset coverage, and analysis sections use these original figures. The analysis caption distinguishes diagnostic paired-subset ablations from the main 699-question leaderboard.
 
+The supplied five-stage construction PNG now appears in Design; the original task filmstrip figure appears in Introduction. The design PNG remains byte-identical at 4287 × 2094, with its original transparency shown on a white canvas. Its SHA-256 and dimensions are recorded in the same provenance manifest and checked during CI. The construction diagram's annotation schema is illustrative, separate from the executable runner's catalog interface.
+
 ## Evaluation review
 
 The supplied evaluation package was audited and corrected. Material changes include:
@@ -60,6 +62,10 @@ The conceptual memory scene adds three signal paths, orbit layers, node activati
 Conference submission and review-status promotion has been removed from public text. The unpublished paper PDF and its download links have been removed from the current release; no replacement preprint URL is advertised. Only the three user-approved original figure PDFs are allowed in the deployed site. The validator and ignore rule prevent reintroducing a paper PDF into the Pages assets.
 
 The Overview now credits all eight authors in the order shown in the supplied OpenReview screenshot. Aoyang Cai and Boning Zhao are marked as equal contributors, Zhiwei Yu and Guocai Yao as corresponding authors, and Shaoxuan Xie is assigned to BAAI according to the user's correction. An independent visual transcription and HTML review checked the names, order, institution numbering, contribution markers, and accessible labels. The author block was inspected at 320, 390, 768, and 1440px with no clipping or page overflow.
+
+The author block has been integrated into the opening research masthead, before the conceptual memory hero. A compact centered byline replaces the widely spaced grid. Official Tsinghua, HKU, and BAAI institution marks accompany larger affiliation names; their original files and source pages are documented. The mobile layout uses HKU's standalone shield rather than shrinking the full signature. Browser inspection at 320, 390, 768, 1024, and 1440px verifies the original author order and markers, intact images, and no horizontal overflow.
+
+Per the user's affiliation correction, Aoyang Cai and Boning Zhao also have BAAI affiliations as interns: their superscripts are respectively `1,3,*` and `2,3,*`, with both institutions included in the accessible labels.
 
 ## Practical limits
 

@@ -20,7 +20,7 @@ EMBER-Bench evaluates cross-event causal memory in recorded egocentric household
 
 ![Original overview of four memory scenarios and paired prediction/traceback questions](docs/assets/figures/benchmark_overview_film.png)
 
-Original figures: [Benchmark overview](docs/assets/figures/benchmark_overview_film.pdf) · [Dataset diversity](docs/assets/figures/benchmark_diversity.pdf) · [Experimental analysis](docs/assets/figures/section4_analysis.pdf). The website displays all three with links to the unmodified PDFs.
+Original figures: [Introduction](docs/assets/figures/benchmark_overview_film.pdf) · [Construction design](docs/assets/figures/benchmark_design.png) · [Dataset diversity](docs/assets/figures/benchmark_diversity.pdf) · [Experimental analysis](docs/assets/figures/section4_analysis.pdf). The website displays these figures with links to their unmodified source files.
 
 | Scenario | Memory requirement | P questions | C questions |
 |---|---|---:|---:|
