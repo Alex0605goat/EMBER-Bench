@@ -48,4 +48,3 @@ python -m pytest tests -q
 Before release, inspect both pages at desktop and mobile widths. Exercise search, source filtering, score sorting, CSV export, keyboard focus, and reduced motion. Confirm the human reference is excluded from model rank and missing data never displays as zero.
 
 Design references: [SWE-bench](https://www.swebench.com/), [MMMU](https://mmmu-benchmark.github.io/), and [LongVideoBench](https://longvideobench.github.io/) informed the resource navigation, benchmark explanation, and results structure. Styling and memory illustrations are original to this site.
-

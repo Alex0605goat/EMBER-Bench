@@ -33,4 +33,3 @@ For a new protocol, add a clearly named and documented results section rather th
 ## Edit the paper data
 
 Edit `docs/data/leaderboard.json`, run `python scripts/sync_leaderboard.py` to regenerate CSV and the static HTML fallback, then run `python scripts/validate_site.py`. Include the supporting source in the pull request. The validator pins the reviewed Table 2 snapshot; deliberate paper corrections also require updating its verified fingerprint. The CSV download must contain the same underlying numbers shown in the table.
-

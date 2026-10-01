@@ -2,6 +2,7 @@ name: Validate website and evaluation
 on:
   push:
   pull_request:
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:
@@ -19,4 +20,3 @@ jobs:
       - name: Run offline evaluation tests
         working-directory: evaluation
         run: python -m pytest tests -q
-

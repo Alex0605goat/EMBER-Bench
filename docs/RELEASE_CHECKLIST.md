@@ -15,4 +15,3 @@ This checklist records the scope of the initial website and evaluation-code rele
 - [ ] Confirm repository owner and Pages deployment permissions.
 
 Limitations: the released catalog and complete media are needed for an actual benchmark run. Offline tests validate the runner implementation and transport contracts; they do not reproduce or independently verify the manuscript's model results. Live provider availability is outside the offline test scope.
-
