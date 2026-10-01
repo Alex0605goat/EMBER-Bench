@@ -63,7 +63,9 @@ Before release, inspect both pages at desktop and mobile widths. Exercise search
 
 ## Visual design and motion
 
-The site uses white and soft-gray surfaces, large system sans-serif type, graphite text, and warm amber accents. Buttons use at least 16px labels and 44px interaction targets. Both pages share the same continuous EMBER-Bench wordmark and E-shaped circuit icon.
+The site uses white and soft-gray surfaces, large system sans-serif type, graphite text, and warm amber accents. Buttons use at least 16px labels and 44px interaction targets. Both pages share the same continuous EMBER-Bench wordmark and a geometric ember/flame icon with circuit accents.
+
+The navigation labels the design section as **Design**. `common.js` highlights it while the section is being read and returns to Overview outside that section, including native anchor navigation and browser history. The existing `#benchmark` anchor remains compatible with older links.
 
 `docs/assets/js/memory-scene.js` animates the conceptual SVG with layered orbits, three causal signal paths, node activation, and gentle pointer depth. It pauses outside the viewport and while the page is hidden. Reduced motion displays the original static composition. `home.js` progressively reveals content and score bars; the text, figures, and actual score values remain available without JavaScript. Research figure contents must remain unmodified.
 

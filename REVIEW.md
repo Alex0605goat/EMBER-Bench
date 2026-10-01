@@ -53,7 +53,7 @@ Use a fresh output directory for the smoke command. See the evaluation package's
 
 ## Light presentation and paper withdrawal
 
-Both pages now use a spacious white presentation, graphite system sans-serif type, warm amber accents, and the continuous EMBER-Bench circuit wordmark. Real browser checks at 320, 390, 768, 1024, and 1440px verify that every visible button has at least a 16px label and a 44px target, with no page overflow, missing images, or script errors. Search, class filters, all score sorts, CSV export, keyboard tabs, mobile navigation, and the no-JavaScript table still pass.
+Both pages now use a spacious white presentation, graphite system sans-serif type, warm amber accents, and the continuous EMBER-Bench wordmark with a geometric flame icon. Real browser checks at 320, 390, 768, 1024, and 1440px verify that every visible button has at least a 16px label and a 44px target, with no page overflow, missing images, or script errors. Search, class filters, all score sorts, CSV export, keyboard tabs, mobile navigation, and the no-JavaScript table still pass.
 
 The conceptual memory scene adds three signal paths, orbit layers, node activation, central echoes, and gentle pointer depth. Browser checks verify actual motion, reduced-motion reset and freeze, offscreen pause and resume, repeated back/forward-cache lifecycle, and terminal cleanup. Scientific figures and all 170 reported scores remain unchanged.
 

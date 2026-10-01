@@ -4,7 +4,7 @@
 
 ### Benchmarking Cross-Event Causal Memory in Long-Horizon Embodied Tasks
 
-**Which past event still matters for the next action?**
+**Which past event matters for the next action?**
 
 [Homepage](https://Alex0605goat.github.io/EMBER-Bench/) · [Leaderboard](https://Alex0605goat.github.io/EMBER-Bench/leaderboard.html) · [Evaluation code](evaluation/README.md)
 

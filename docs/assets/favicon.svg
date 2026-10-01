@@ -1,14 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <title>EMBER memory circuit</title>
-  <rect width="64" height="64" rx="14" fill="#101316"/>
-  <g fill="none" stroke="#efad79" stroke-width="2" opacity=".65">
-    <path d="M19 11h26l8 8v26l-8 8H19l-8-8V19Z"/>
-    <path d="M6 32h5m42 0h5M32 6v5m0 42v5"/>
-  </g>
-  <path d="M42 20H23v24h19M23 32h14" fill="none" stroke="#efad79" stroke-width="4" stroke-linecap="square"/>
-  <g fill="#efad79">
-    <circle cx="43" cy="20" r="3"/>
-    <circle cx="38" cy="32" r="3"/>
-    <circle cx="43" cy="44" r="3"/>
-  </g>
+  <title>EMBER geometric flame</title>
+  <defs>
+    <linearGradient id="ember" x1="32" y1="8" x2="32" y2="59" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f4bf80"/>
+      <stop offset="1" stop-color="#ca823d"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#1d1d1f"/>
+  <path d="M33 8 34 22 42 30 44 20 51 34 53 42 50 51 42 58 29 59 18 53 12 43 15 33 23 23 23 34 29 28Z" fill="url(#ember)"/>
+  <path d="M31 33 31 41 36 37 41 46 37 53 30 55 24 50 23 44Z" fill="#fff0cf"/>
+  <path d="M45 54h10v-9" fill="none" stroke="#ca945c" stroke-width="1.5" opacity=".75"/>
+  <circle cx="55" cy="43" r="2" fill="#efb777"/>
+  <rect x="48" y="11" width="3" height="3" fill="#efb777"/>
 </svg>

@@ -34,9 +34,9 @@ em{font-family:inherit;font-style:normal;font-weight:inherit}sup{font-size:.58em
 .brand .brand-wordmark{color:var(--ink);font:inherit;letter-spacing:inherit}
 .nav-links{display:flex;align-items:center;gap:30px;color:#56595e;font-size:16px}
 .nav-links a{display:inline-flex;align-items:center;gap:6px;min-height:44px;font-size:16px;transition:color .2s}
-.nav-links a:hover,.nav-links a[aria-current=page]{color:var(--ink)}
-.nav-links a[aria-current=page]{position:relative;font-weight:600}
-.nav-links a[aria-current=page]:after{content:"";position:absolute;left:0;right:0;bottom:1px;height:2px;border-radius:2px;background:var(--ember)}
+.nav-links a:hover,.nav-links a:is([aria-current=page],[aria-current=location]){color:var(--ink)}
+.nav-links a:is([aria-current=page],[aria-current=location]){position:relative;font-weight:600}
+.nav-links a:is([aria-current=page],[aria-current=location]):after{content:"";position:absolute;left:0;right:0;bottom:1px;height:2px;border-radius:2px;background:var(--ember)}
 .repo-link svg{width:18px;height:18px}
 .mobile-nav-toggle{display:none;min-height:44px;padding:8px 14px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:16px}
 
@@ -243,7 +243,7 @@ em{font-family:inherit;font-style:normal;font-weight:inherit}sup{font-size:.58em
 @media(max-width:850px){
  :root{--gutter:30px;--nav-height:76px}.brand{font-size:21px}.mobile-nav-toggle{display:block}
  .nav-links{display:none;position:absolute;left:0;right:0;top:var(--nav-height);flex-wrap:wrap;justify-content:center;padding:18px 24px;border-bottom:1px solid var(--line);background:rgb(255 255 255 / 98%);box-shadow:0 12px 24px rgb(29 29 31 / 5%)}
- .nav-links.is-open{display:flex}.nav-links a[aria-current=page]:after{bottom:2px}
+ .nav-links.is-open{display:flex}.nav-links a:is([aria-current=page],[aria-current=location]):after{bottom:2px}
  .hero{padding-top:70px;padding-bottom:72px}.hero-grid{grid-template-columns:1fr;gap:34px}.hero-copy{max-width:650px}
  .hero h1{font-size:74px}.hero .full-name{max-width:630px;font-size:21px}.hero-copy>p{max-width:590px;font-size:18px}
  .hero-visual{width:min(100%,580px);margin:0 auto}.hero-actions .button{font-size:17px}
