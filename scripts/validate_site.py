@@ -8,6 +8,7 @@ from html.parser import HTMLParser
 import json
 from pathlib import Path
 import re
+import struct
 from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -89,7 +90,16 @@ def main():
         cells = {key: float(value) for key, value in re.findall(r'<td\b[^>]*data-key="([^"]+)"[^>]*>([\d.]+)</td>', markup)}
         assert cells == {key: expected[html.unescape(name)][key] for key in COLUMNS}, 'Static HTML table differs from paper JSON.'
     assert hashlib.sha256((SITE / 'assets/EMBER-Bench.pdf').read_bytes()).hexdigest() == PAPER_SHA, 'Submission manuscript changed.'
-    print(f'PASS: {len(pages)} HTML pages, {checked} local links, owner alignment, 17 rows / 170 paper scores in JSON, CSV and static HTML, manuscript SHA-256.')
+    originals = json.loads((SITE / 'assets/figures/originals.json').read_text(encoding='utf-8'))['figures']
+    expected_figures = {'benchmark_overview_film.pdf', 'benchmark_diversity.pdf', 'section4_analysis.pdf'}
+    assert {f['source'] for f in originals} == expected_figures and len(originals) == 3
+    for figure in originals:
+        pdf = SITE / 'assets/figures' / figure['source']
+        assert hashlib.sha256(pdf.read_bytes()).hexdigest() == figure['pdf_sha256'], f'Original figure PDF changed: {pdf.name}'
+        png = (SITE / 'assets/figures' / figure['render']).read_bytes()
+        assert png[:8] == b'\x89PNG\r\n\x1a\n'
+        assert struct.unpack('>II', png[16:24]) == (figure['width'], figure['height']), 'Figure render dimensions changed.'
+    print(f'PASS: {len(pages)} HTML pages, {checked} local links, owner alignment, 17 rows / 170 paper scores in JSON, CSV and static HTML, manuscript SHA-256, and 3 original figure PDFs/renders.')
 
 
 if __name__ == '__main__':

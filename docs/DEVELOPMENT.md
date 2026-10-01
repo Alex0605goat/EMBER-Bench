@@ -24,6 +24,20 @@ After a reviewed data edit, run `python scripts/sync_leaderboard.py` to regenera
 
 The Table 2 paper snapshot is a separate protocol from new unified-runner evaluations. Do not replace paper numbers with a rerun or a synthetic test output. See [leaderboard review](LEADERBOARD.md).
 
+## Original scientific figures
+
+The homepage displays the three supplied source figures from `docs/assets/figures/`:
+
+| Source PDF | Homepage placement | PNG dimensions |
+| --- | --- | --- |
+| `benchmark_overview_film.pdf` | Benchmark overview and task filmstrips | 3200 × 1688 |
+| `section4_analysis.pdf` | Experimental and diagnostic analyses | 3200 × 1738 |
+| `benchmark_diversity.pdf` | Dataset coverage and distributions | 3200 × 1557 |
+
+Each source PDF is preserved byte for byte. Its same-name PNG is a full-page rendering at 3200 pixels wide, with the original aspect ratio, colors, and white canvas. Figures link directly to their original PDFs; `originals.json` records their SHA-256 checksums. Do not crop, redraw, recolor, or restyle the contents of these research figures to match the website theme.
+
+The analysis figure includes history-length and event-distance breakdowns, information ablations, and paired prediction–traceback outcomes. The annotation ablation uses 151 paired prediction questions with privileged causal information. This diagnostic subset is distinct from the 699-question main leaderboard.
+
 ## Publish with GitHub Pages
 
 1. Push the reviewed repository to `Alex0605goat/EMBER-Bench`.

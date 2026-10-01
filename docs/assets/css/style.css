@@ -10,3 +10,8 @@
 @media(max-width:560px){.hero .full-name{font-size:15px}.hero-copy>p,.intro-grid .intro-copy,.section-heading>p,.scenario p,.protocol-item p,.finding p,.resource p{font-size:14px}.event-cell p,.direction-answer p{font-size:13px}.direction-answer h4{font-size:14px}.comparison-note{font-size:12px}.leaderboard-heading p,.detail-grid p{font-size:13px}.submission-banner p{font-size:12px}.leaderboard-table{font-size:12px}.leaderboard-table tbody th.model-cell{font-size:11px}.leaderboard-table th button{font-size:11px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
 @media(max-width:560px){.leaderboard-table{table-layout:fixed;width:950px;min-width:950px}.leaderboard-table th.rank-cell{width:30px;min-width:30px}.leaderboard-table th.model-cell{width:165px;min-width:165px;max-width:165px}.leaderboard-table th[data-column=overall]{width:75px}.leaderboard-table .column-groups .p-group{width:380px}.leaderboard-table .column-groups .c-group{width:300px}}
+.figure-box.original-figure{background:#fff;border:1px solid var(--line);padding:0;border-radius:4px}
+.section.container{padding-left:56px;padding-right:56px}
+@media(max-width:1100px){.section.container{padding-left:35px;padding-right:35px}}
+@media(max-width:800px){.section.container{padding-left:25px;padding-right:25px}}
+@media(max-width:560px){.section.container{padding-left:21px;padding-right:21px}}

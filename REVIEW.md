@@ -20,7 +20,9 @@ The paper's anonymous review URL states that review data and code are available.
 - Search and empty state; 7 closed-source / 9 open-source filters; all ten score columns in both sort directions; global ranks and ties with an unranked human reference.
 - Downloaded CSV checked against all 170 values; no-JavaScript table checked against the same values.
 - Keyboard tabs, mobile menu/Escape handling, and reduced-motion behavior exercised.
-- Dependency-free `scripts/validate_site.py` checks the paper snapshot, manuscript fingerprint, public ownership configuration, and all 41 local HTML links. `scripts/sync_leaderboard.py` regenerates CSV and static table from reviewed JSON.
+- Dependency-free `scripts/validate_site.py` checks the paper snapshot, manuscript fingerprint, public ownership configuration, and all local HTML links. `scripts/sync_leaderboard.py` regenerates CSV and static table from reviewed JSON.
+
+The user subsequently supplied three original figure PDFs: `benchmark_overview_film.pdf`, `benchmark_diversity.pdf`, and `section4_analysis.pdf`. The website uses full-page, 3200px-wide PNG renders with the original aspect ratios, colors, labels, and content. Each figure links to its unmodified source PDF. Byte identity against the supplied files was verified; checksums and render dimensions are recorded in `docs/assets/figures/originals.json` and checked during CI. The overview, dataset coverage, and analysis sections use these original figures. The analysis caption distinguishes diagnostic paired-subset ablations from the main 699-question leaderboard.
 
 ## Evaluation review
 

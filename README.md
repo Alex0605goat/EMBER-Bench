@@ -20,6 +20,10 @@
 
 EMBER-Bench evaluates cross-event causal memory in recorded egocentric household activities. Models must use the continuing consequences of earlier events to decide what to do next after those events leave view. At fixed decision points, four-option questions evaluate **next-action prediction (P)** and **causal traceback (C)**. This is an offline reasoning benchmark; the task does not execute a robot policy.
 
+![Original overview of four memory scenarios and paired prediction/traceback questions](docs/assets/figures/benchmark_overview_film.png)
+
+Original figures: [Benchmark overview](docs/assets/figures/benchmark_overview_film.pdf) · [Dataset diversity](docs/assets/figures/benchmark_diversity.pdf) · [Experimental analysis](docs/assets/figures/section4_analysis.pdf). The website displays all three with links to the unmodified PDFs.
+
 | Scenario | Memory requirement | P questions | C questions |
 |---|---|---:|---:|
 | **L1 · Task Progress** | Completed steps and prerequisites | 205 | — |

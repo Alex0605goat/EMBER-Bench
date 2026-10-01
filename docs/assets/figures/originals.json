@@ -1,0 +1,26 @@
+{
+  "description": "Unmodified user-supplied original PDFs and faithful full-page PNG renders.",
+  "figures": [
+    {
+      "source": "benchmark_overview_film.pdf",
+      "pdf_sha256": "7f532642d6c03ba0cbc6bc5272a58d4fb64822a6e9ff89a05f71ab48c622c1a2",
+      "render": "benchmark_overview_film.png",
+      "width": 3200,
+      "height": 1688
+    },
+    {
+      "source": "benchmark_diversity.pdf",
+      "pdf_sha256": "8d2f5d7f64fc6668500fbce89df2eaf68849f4d5e9d2b785d8749ee9a8c691fb",
+      "render": "benchmark_diversity.png",
+      "width": 3200,
+      "height": 1557
+    },
+    {
+      "source": "section4_analysis.pdf",
+      "pdf_sha256": "18196a4f838fcf957c6501d167969442ddb64a3daf5b72d2e315c6d4ccb2ba8c",
+      "render": "section4_analysis.png",
+      "width": 3200,
+      "height": 1738
+    }
+  ]
+}
