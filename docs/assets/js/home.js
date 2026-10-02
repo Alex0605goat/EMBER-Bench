@@ -29,6 +29,10 @@
   const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
   const revealTargets = Array.from(document.querySelectorAll('.section-heading, .intro-grid, .scenario, .resource, .finding, .original-figure'));
   const scoreTargets = Array.from(document.querySelectorAll('.score-bar'));
+  const scoreGroups = Array.from(document.querySelectorAll('.score-comparison'));
+  scoreGroups.forEach(group => Array.from(group.querySelectorAll('.score-bar')).forEach((bar, index) => {
+    bar.style.setProperty('--score-delay', `${index * .95}s`);
+  }));
   let observer = null;
   let scoreObserver = null;
   function showAll() {
@@ -47,13 +51,16 @@
       if (entry.isIntersecting) { entry.target.classList.add('is-visible'); actualObserver.unobserve(entry.target); }
     }), { threshold: .08, rootMargin: '0px 0px 28px 0px' });
     scoreObserver = new IntersectionObserver((entries, actualObserver) => entries.forEach(entry => {
-      if (entry.isIntersecting) { entry.target.classList.add('score-visible'); actualObserver.unobserve(entry.target); }
-    }), { threshold: .5 });
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.score-bar').forEach(bar => bar.classList.add('score-visible'));
+        actualObserver.unobserve(entry.target);
+      }
+    }), { threshold: .3 });
     revealTargets.forEach(element => {
       if (!element.classList.contains('is-visible')) observer.observe(element);
     });
-    scoreTargets.forEach(element => {
-      if (!element.classList.contains('score-visible')) scoreObserver.observe(element);
+    scoreGroups.forEach(element => {
+      if (Array.from(element.querySelectorAll('.score-bar')).some(bar => !bar.classList.contains('score-visible'))) scoreObserver.observe(element);
     });
   }
   preference.addEventListener('change', updateMotion);

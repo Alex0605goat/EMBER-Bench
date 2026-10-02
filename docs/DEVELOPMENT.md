@@ -68,12 +68,14 @@ Before release, inspect both pages at desktop and mobile widths. Exercise search
 
 ## Visual design and motion
 
-The site uses white and soft-gray surfaces, large system sans-serif type, graphite text, and warm amber accents. Buttons use at least 16px labels and 44px interaction targets. Both pages share the same continuous EMBER-Bench wordmark and a geometric ember/flame icon with circuit accents.
+The site uses a white base with very pale mint and ice-blue light fields, large system sans-serif type, and readable deep-teal text. Two decorative gradient layers drift slowly behind the content without animated filters. Buttons use at least 16px labels and 44px interaction targets. Both pages share the same continuous EMBER-Bench wordmark and a geometric ember/flame icon with circuit accents.
 
 The navigation labels the design section as **Design**. `common.js` highlights it while the section is being read and returns to Overview outside that section, including native anchor navigation and browser history. The existing `#benchmark` anchor remains compatible with older links.
 
 The Overview's `#authors` block preserves the author order from the supplied OpenReview author list. Aoyang Cai and Boning Zhao share the `*` equal-contribution marker; Zhiwei Yu and Guocai Yao share the `†` corresponding-author marker. Affiliation 1 is Tsinghua University, 2 is The University of Hong Kong, and 3 is Beijing Academy of Artificial Intelligence (BAAI). Shaoxuan Xie's affiliation follows the author-provided correction to BAAI. Keep visible superscripts, their accessible labels, and the affiliation legend synchronized when updating this block.
 
 `docs/assets/js/memory-scene.js` animates the conceptual SVG with layered orbits, three causal signal paths, node activation, and gentle pointer depth. It pauses outside the viewport and while the page is hidden. Reduced motion displays the original static composition. `home.js` progressively reveals content and score bars; the text, figures, and actual score values remain available without JavaScript. Research figure contents must remain unmodified.
+
+The comparison card's third row is the unweighted mean of the 16 non-human models' reported Overall accuracies: `660.3 / 16 = 41.26875%`, displayed as `41.3%`. The validator checks the displayed mean, exact bar percentage, and model count against the leaderboard JSON. Score tracks stay visible; only the fills expand from their left edge, sequentially at 0.95-second intervals. Reduced motion shows all fills immediately and freezes the decorative gradients.
 
 Design references: [Apple](https://www.apple.com/iphone/) informed the spacious light presentation and restrained motion. [SWE-bench](https://www.swebench.com/), [MMMU](https://mmmu-benchmark.github.io/), and [LongVideoBench](https://longvideobench.github.io/) informed resource navigation, benchmark explanation, and results structure. Styling and memory illustrations are original to this site.

@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import hashlib
 import csv
+from decimal import Decimal
 import html
 from html.parser import HTMLParser
 import json
@@ -76,6 +77,14 @@ def main():
     canonical = [{k: row[k] for k in ['name', 'category', *COLUMNS]} for row in sorted(rows, key=lambda r: r['name'])]
     digest = hashlib.sha256(json.dumps(canonical, sort_keys=True, separators=(',', ':'), ensure_ascii=False).encode()).hexdigest()
     assert digest == TABLE_SHA, 'Paper Table 2 differs from the verified 170-value transcription.'
+    model_rows = [row for row in rows if row['category'] != 'human']
+    model_mean = sum(Decimal(str(row['overall'])) for row in model_rows) / len(model_rows)
+    home = (SITE / 'index.html').read_text(encoding='utf-8')
+    displayed_mean = re.search(r'<strong id="model-average">([\d.]+)<span>', home)
+    average_bar = re.search(r'class="score-row average".*?--value:([\d.]+)%', home, re.S)
+    assert displayed_mean and Decimal(displayed_mean.group(1)) == model_mean.quantize(Decimal('0.1')), 'Homepage model average differs from the model-only Overall mean.'
+    assert average_bar and Decimal(average_bar.group(1)) == model_mean, 'Homepage average bar differs from the model-only Overall mean.'
+    assert f'{len(model_rows)}-model average' in home, 'Homepage average model count is stale.'
     expected = {r['name']: r for r in rows}
     with (SITE / 'data/leaderboard.csv').open(encoding='utf-8', newline='') as stream:
         csv_rows = list(csv.DictReader(stream))
@@ -111,7 +120,7 @@ def main():
         assert hashlib.sha256(png).hexdigest() == figure['sha256'], 'Original design image changed.'
         assert png[:8] == b'\x89PNG\r\n\x1a\n'
         assert struct.unpack('>II', png[16:24]) == (figure['width'], figure['height']), 'Original design image dimensions changed.'
-    print(f'PASS: {len(pages)} HTML pages, {checked} local links, owner alignment, 17 rows / 170 paper scores in JSON, CSV and static HTML, unpublished paper exclusion, 3 original figure PDFs/renders, and the original design PNG.')
+    print(f'PASS: {len(pages)} HTML pages, {checked} local links, owner alignment, 17 rows / 170 paper scores in JSON, CSV and static HTML, model-only Overall mean, unpublished paper exclusion, 3 original figure PDFs/renders, and the original design PNG.')
 
 
 if __name__ == '__main__':

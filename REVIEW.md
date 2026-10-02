@@ -69,6 +69,12 @@ The author block has been integrated into the opening research masthead, before 
 
 Per the user's affiliation correction, Aoyang Cai and Boning Zhao also have BAAI affiliations as interns: their superscripts are respectively `1,3,*` and `2,3,*`, with both institutions included in the accessible labels.
 
+## Mint and ice-blue presentation refinement
+
+The shared theme now uses very pale mint and ice-blue light fields with slow gradient motion and readable deep-teal text. The conceptual memory SVG uses matching colors; all four original scientific figures, institution assets, and reported leaderboard scores remain unchanged. Reduced motion disables the decorative gradient motion and immediately shows full score bars.
+
+The comparison card now shows the unweighted average of the 16 non-human models' reported Overall accuracies: `660.3 / 16 = 41.26875%`, displayed as **41.3%**. An independent calculation and visual check of the supplied table verified all 16 inputs. The average excludes the human reference, and the website validator checks both the one-decimal display and the exact bar percentage against the leaderboard JSON. Each score track stays visible while its fill expands from the left; the three fills start in sequence.
+
 ## Practical limits
 
 The complete real dataset/media, frozen paired-ID lists, and historical provider artifacts are not included. This review verifies an executable **unified runner**, not an exact reproduction or independent validation of the paper's 16-model scores. Live provider availability and deployment IDs were not tested. Media-prefix boundaries, option overlays, face blurring, and annotation leakage require review of the actual released inputs; hashes alone cannot establish those properties.
