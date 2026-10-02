@@ -31,7 +31,7 @@
   const scoreTargets = Array.from(document.querySelectorAll('.score-bar'));
   const scoreGroups = Array.from(document.querySelectorAll('.score-comparison'));
   scoreGroups.forEach(group => Array.from(group.querySelectorAll('.score-bar')).forEach((bar, index) => {
-    bar.style.setProperty('--score-delay', `${index * .95}s`);
+    bar.style.setProperty('--score-delay', `${index * .18}s`);
   }));
   let observer = null;
   let scoreObserver = null;

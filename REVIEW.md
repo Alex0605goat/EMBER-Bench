@@ -81,6 +81,12 @@ The shared theme now uses warm white, extremely pale champagne and ivory light f
 
 Desktop and mobile browser checks at 320, 390, 768, 1024, and 1440px verified both pages without horizontal overflow, missing images, undersized controls, or script errors. Visual inspection covered the research masthead, conceptual hero, comparison card, and leaderboard. Checks also passed for sequential fills with fixed tracks, reduced motion, and no-JavaScript fallback. Calculated contrast is at least 5.21:1 for primary button text and 4.76:1 for secondary small text on the reviewed interface surfaces.
 
+## Transparent institution mark and compact score motion
+
+The Tsinghua affiliation now displays the complete university emblem from the official Visual Identity site's transparent PNG as a native CSS alpha mask in Tsinghua purple. The original source bytes are preserved and documented in `docs/assets/institutions/SOURCES.md`; no emblem is generated or redrawn. Desktop and mobile inspection confirms the former JPEG's white rectangle is gone. Checks at 320, 390, 768, 1024, and 1440px verify readable affiliation names, unchanged author markers, intact research figures, and no overflow.
+
+The three score fills now take 0.55 seconds each and start 0.18 seconds apart, finishing in approximately 0.91 seconds after the first begins. Browser sampling verifies ordered, monotonic left-to-right growth, fixed tracks and left edges, and the exact final 98.3%, 61.2%, and 41.26875% fill proportions. Reduced motion and the no-JavaScript fallback show complete fills immediately. The 170 reported scores and 41.3% displayed model average are unchanged. CSS and homepage script cache versions are updated.
+
 ## Practical limits
 
 The complete real dataset/media, frozen paired-ID lists, and historical provider artifacts are not included. This review verifies an executable **unified runner**, not an exact reproduction or independent validation of the paper's 16-model scores. Live provider availability and deployment IDs were not tested. Media-prefix boundaries, option overlays, face blurring, and annotation leakage require review of the actual released inputs; hashes alone cannot establish those properties.
