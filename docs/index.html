@@ -4,15 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="EMBER-Bench evaluates cross-event causal memory in long-horizon embodied tasks: 189 household tasks, 699 questions, four memory scenarios, and two reasoning directions.">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#fffdf9">
   <meta property="og:title" content="EMBER-Bench · Cross-event causal memory">
   <meta property="og:description" content="Which past event matters for the next action? An egocentric benchmark for long-horizon embodied reasoning.">
   <meta property="og:type" content="website">
   <title>EMBER-Bench · Cross-event causal memory</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=ember-flame-1">
-  <link rel="stylesheet" href="assets/css/style.css?v=mint-memory-1">
+  <link rel="stylesheet" href="assets/css/style.css?v=warm-memory-1">
   <script src="assets/js/common.js?v=design-nav-1" defer></script>
-  <script src="assets/js/home.js?v=mint-memory-1" defer></script>
+  <script src="assets/js/home.js?v=memory-bars-1" defer></script>
   <noscript><style>.nav-links{display:flex!important;position:static!important;padding:0!important;border:0!important;font-size:14px!important;gap:12px!important;background:none!important}.mobile-nav-toggle{display:none!important}.nav{height:auto!important;min-height:67px;flex-wrap:wrap;padding-top:14px!important;padding-bottom:14px!important}.direction-tabs{display:none!important}#panel-traceback{display:block!important}</style></noscript>
 </head>
 <body id="top">
@@ -78,12 +78,12 @@
           <title id="memory-title">An unfolding field of causal memory</title>
           <desc id="memory-desc">Conceptual schematic. Signals move between past events, lasting consequences, a current decision, and the next action. This is an illustration, not benchmark data.</desc>
           <defs>
-            <radialGradient id="memory-atmosphere"><stop offset="0" stop-color="#b4f8d9" stop-opacity=".34"/><stop offset=".52" stop-color="#c8eeff" stop-opacity=".16"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
-            <radialGradient id="memory-pearl" cx=".36" cy=".26" r=".8"><stop stop-color="#f4fffc"/><stop offset=".45" stop-color="#a9e8d9"/><stop offset="1" stop-color="#538ca4"/></radialGradient>
-            <linearGradient id="memory-thread" x1="106" y1="139" x2="452" y2="368" gradientUnits="userSpaceOnUse"><stop stop-color="#a3d8be" stop-opacity=".38"/><stop offset=".55" stop-color="#3c9e8d" stop-opacity=".9"/><stop offset="1" stop-color="#87cfe4" stop-opacity=".54"/></linearGradient>
-            <linearGradient id="memory-fade" x1="0" y1="80" x2="0" y2="510" gradientUnits="userSpaceOnUse"><stop stop-color="#a7adb2" stop-opacity="0"/><stop offset=".3" stop-color="#a7adb2" stop-opacity=".32"/><stop offset=".9" stop-color="#a7adb2" stop-opacity=".08"/></linearGradient>
+            <radialGradient id="memory-atmosphere"><stop offset="0" stop-color="#ffe9b0" stop-opacity=".34"/><stop offset=".52" stop-color="#fff1d7" stop-opacity=".16"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+            <radialGradient id="memory-pearl" cx=".36" cy=".26" r=".8"><stop stop-color="#fffdf5"/><stop offset=".45" stop-color="#f4d39a"/><stop offset="1" stop-color="#b67b35"/></radialGradient>
+            <linearGradient id="memory-thread" x1="106" y1="139" x2="452" y2="368" gradientUnits="userSpaceOnUse"><stop stop-color="#e9c995" stop-opacity=".38"/><stop offset=".55" stop-color="#bb883f" stop-opacity=".9"/><stop offset="1" stop-color="#eed5a7" stop-opacity=".54"/></linearGradient>
+            <linearGradient id="memory-fade" x1="0" y1="80" x2="0" y2="510" gradientUnits="userSpaceOnUse"><stop stop-color="#afa99e" stop-opacity="0"/><stop offset=".3" stop-color="#afa99e" stop-opacity=".32"/><stop offset=".9" stop-color="#afa99e" stop-opacity=".08"/></linearGradient>
             <filter id="memory-soft-glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="8"/></filter>
-            <pattern id="memory-dots" width="27" height="27" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".65" fill="#bec3c7" opacity=".45"/></pattern>
+            <pattern id="memory-dots" width="27" height="27" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".65" fill="#c9c2b7" opacity=".45"/></pattern>
             <mask id="memory-grid-mask"><rect width="620" height="540" fill="url(#memory-atmosphere)"/></mask>
           </defs>
           <rect x="24" y="32" width="572" height="470" fill="url(#memory-dots)" opacity=".55"/>
@@ -92,21 +92,21 @@
             <path d="M64 342 310 188 556 342 310 496Z M105 368 351 214 M146 393 392 240 M187 419 433 265 M228 445 474 291 M269 470 515 316 M105 316 351 470 M146 291 392 445 M187 265 433 419 M228 240 474 393 M269 214 515 368"/>
           </g>
           <g data-memory-field>
-            <g fill="none" stroke="#a2aaaf" stroke-width=".65">
+            <g fill="none" stroke="#aaa399" stroke-width=".65">
               <ellipse cx="310" cy="270" rx="238" ry="151" transform="rotate(-24 310 270)" opacity=".31"/>
               <ellipse cx="310" cy="270" rx="215" ry="172" transform="rotate(26 310 270)" opacity=".23"/>
               <ellipse cx="310" cy="270" rx="183" ry="111" transform="rotate(-24 310 270)" opacity=".2"/>
               <path d="M97 270h426M310 68v404" stroke-dasharray="1 8" opacity=".21"/>
             </g>
-            <g data-memory-orbit="1" fill="none" stroke="#8bbfae" stroke-width=".8" opacity=".48">
+            <g data-memory-orbit="1" fill="none" stroke="#cbab71" stroke-width=".8" opacity=".48">
               <circle cx="310" cy="270" r="205" stroke-dasharray="47 241 7 355 89 420"/>
-              <circle cx="310" cy="65" r="3" fill="#fff"/><circle cx="498" cy="351" r="2.5" fill="#80c7d8" stroke="none"/>
+              <circle cx="310" cy="65" r="3" fill="#fff"/><circle cx="498" cy="351" r="2.5" fill="#dec184" stroke="none"/>
             </g>
-            <g data-memory-orbit="-1" fill="none" stroke="#b9c0c4" stroke-width=".6" opacity=".58">
+            <g data-memory-orbit="-1" fill="none" stroke="#c7c0b5" stroke-width=".6" opacity=".58">
               <circle cx="310" cy="270" r="160" stroke-dasharray="31 196 4 520"/>
-              <circle cx="157" cy="224" r="2.5" fill="#fff"/><circle cx="389" cy="409" r="2" fill="#acb8bd" stroke="none"/>
+              <circle cx="157" cy="224" r="2.5" fill="#fff"/><circle cx="389" cy="409" r="2" fill="#bab2a6" stroke="none"/>
             </g>
-            <g fill="none" stroke="#a8b3b9" stroke-width=".8" opacity=".44">
+            <g fill="none" stroke="#b8b0a3" stroke-width=".8" opacity=".44">
               <path d="M109 157 189 207 215 349 310 270 414 141 512 227 443 362 370 411 310 270 189 207 336 107"/>
               <path d="M88 350 215 349 256 437 443 362 542 415M189 207l-45 71 71 71M310 270l57-91 47-38"/>
             </g>
@@ -115,31 +115,31 @@
               <path data-memory-path="recall" d="M414 141 C394 177 360 202 310 270 S242 333 215 349" opacity=".55"/>
               <path data-memory-path="state" d="M256 437 C279 409 337 345 310 270 C293 228 316 144 336 107" opacity=".31"/>
             </g>
-            <g fill="#fff" stroke="#a6b2b8" stroke-width="1">
+            <g fill="#fff" stroke="#b8ad9b" stroke-width="1">
               <circle cx="512" cy="227" r="4"/><circle cx="336" cy="107" r="3.5"/><circle cx="144" cy="278" r="3"/><circle cx="88" cy="350" r="3"/><circle cx="256" cy="437" r="4"/><circle cx="370" cy="411" r="3"/><circle cx="542" cy="415" r="3"/>
             </g>
-            <g data-memory-node="0" data-x="109" data-y="157"><circle data-node-halo cx="109" cy="157" r="12" fill="#a9e8d9" opacity=".12"/><circle cx="109" cy="157" r="4" fill="#fff" stroke="#63a799" stroke-width="1.2"/></g>
-            <g data-memory-node="1" data-x="189" data-y="207"><circle data-node-halo cx="189" cy="207" r="14" fill="#a9e8d9" opacity=".15"/><circle cx="189" cy="207" r="4.5" fill="#b5eddf" stroke="#549f91" stroke-width="1"/></g>
-            <g data-memory-node="2" data-x="310" data-y="270"><circle data-node-halo cx="310" cy="270" r="38" fill="#a3ddcf" opacity=".1"/></g>
-            <g data-memory-node="3" data-x="443" data-y="362"><circle data-node-halo cx="443" cy="362" r="14" fill="#a9e8d9" opacity=".14"/><circle cx="443" cy="362" r="4.5" fill="#fff" stroke="#63a799" stroke-width="1.2"/></g>
-            <g data-memory-node="4" data-x="414" data-y="141"><circle data-node-halo cx="414" cy="141" r="11" fill="#a0b9b4" opacity=".08"/><circle cx="414" cy="141" r="4" fill="#fff" stroke="#9fb3b7" stroke-width="1"/></g>
-            <g data-memory-node="5" data-x="215" data-y="349"><circle data-node-halo cx="215" cy="349" r="11" fill="#a0b9b4" opacity=".08"/><circle cx="215" cy="349" r="4" fill="#fff" stroke="#9fb3b7" stroke-width="1"/></g>
-            <g fill="none" stroke="#74baa9" stroke-width=".7"><circle data-memory-ripple="0" cx="310" cy="270" r="32" opacity=".12"/><circle data-memory-ripple="1" cx="310" cy="270" r="53" opacity=".08"/></g>
-            <circle cx="310" cy="270" r="28" fill="#b5eddf" opacity=".2" filter="url(#memory-soft-glow)"/>
-            <circle cx="310" cy="270" r="23" fill="#fff" fill-opacity=".72" stroke="#98c9c8" stroke-width=".75"/>
+            <g data-memory-node="0" data-x="109" data-y="157"><circle data-node-halo cx="109" cy="157" r="12" fill="#f4d39a" opacity=".12"/><circle cx="109" cy="157" r="4" fill="#fff" stroke="#bd9253" stroke-width="1.2"/></g>
+            <g data-memory-node="1" data-x="189" data-y="207"><circle data-node-halo cx="189" cy="207" r="14" fill="#f4d39a" opacity=".15"/><circle cx="189" cy="207" r="4.5" fill="#f5dcae" stroke="#b78a47" stroke-width="1"/></g>
+            <g data-memory-node="2" data-x="310" data-y="270"><circle data-node-halo cx="310" cy="270" r="38" fill="#ebc88b" opacity=".1"/></g>
+            <g data-memory-node="3" data-x="443" data-y="362"><circle data-node-halo cx="443" cy="362" r="14" fill="#f4d39a" opacity=".14"/><circle cx="443" cy="362" r="4.5" fill="#fff" stroke="#bd9253" stroke-width="1.2"/></g>
+            <g data-memory-node="4" data-x="414" data-y="141"><circle data-node-halo cx="414" cy="141" r="11" fill="#c0b49a" opacity=".08"/><circle cx="414" cy="141" r="4" fill="#fff" stroke="#c1b59f" stroke-width="1"/></g>
+            <g data-memory-node="5" data-x="215" data-y="349"><circle data-node-halo cx="215" cy="349" r="11" fill="#c0b49a" opacity=".08"/><circle cx="215" cy="349" r="4" fill="#fff" stroke="#c1b59f" stroke-width="1"/></g>
+            <g fill="none" stroke="#c9a76c" stroke-width=".7"><circle data-memory-ripple="0" cx="310" cy="270" r="32" opacity=".12"/><circle data-memory-ripple="1" cx="310" cy="270" r="53" opacity=".08"/></g>
+            <circle cx="310" cy="270" r="28" fill="#f5dcae" opacity=".2" filter="url(#memory-soft-glow)"/>
+            <circle cx="310" cy="270" r="23" fill="#fff" fill-opacity=".72" stroke="#d5ba8c" stroke-width=".75"/>
             <circle data-memory-core cx="310" cy="270" r="11.5" fill="url(#memory-pearl)"/>
-            <circle cx="306.5" cy="266.5" r="2.4" fill="#f0fffa" opacity=".66"/>
-            <g data-memory-signal="history" fill="#358d81"><circle data-signal-tail="2" cx="173" cy="196" r="1.1" opacity=".22"/><circle data-signal-tail="1" cx="180" cy="202" r="1.6" opacity=".45"/><circle data-signal-head cx="189" cy="207" r="2.5"/></g>
-            <g data-memory-signal="recall" fill="#73908a" opacity=".65"><circle data-signal-tail="1" cx="373" cy="196" r="1.2" opacity=".35"/><circle data-signal-head cx="366" cy="205" r="2"/></g>
-            <g data-memory-signal="state" fill="#86b1c4" opacity=".45"><circle data-signal-head cx="295" cy="315" r="1.8"/></g>
+            <circle cx="306.5" cy="266.5" r="2.4" fill="#fffaf0" opacity=".66"/>
+            <g data-memory-signal="history" fill="#ac7b34"><circle data-signal-tail="2" cx="173" cy="196" r="1.1" opacity=".22"/><circle data-signal-tail="1" cx="180" cy="202" r="1.6" opacity=".45"/><circle data-signal-head cx="189" cy="207" r="2.5"/></g>
+            <g data-memory-signal="recall" fill="#a48e67" opacity=".65"><circle data-signal-tail="1" cx="373" cy="196" r="1.2" opacity=".35"/><circle data-signal-head cx="366" cy="205" r="2"/></g>
+            <g data-memory-signal="state" fill="#cfb58c" opacity=".45"><circle data-signal-head cx="295" cy="315" r="1.8"/></g>
           </g>
-          <g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="10" letter-spacing="1.15" fill="#727f86">
-            <text x="66" y="132">PAST EVENT</text><text x="133" y="235" fill="#518a7f">LASTING CONSEQUENCE</text>
-            <text x="342" y="265" fill="#377d85">CURRENT</text><text x="342" y="281" fill="#377d85">DECISION</text>
-            <text x="410" y="389">NEXT ACTION</text><text x="391" y="119" font-size="8.5" fill="#8b999f">CHANGED STATE</text><text x="162" y="376" font-size="8.5" fill="#8b999f">TASK PROGRESS</text>
+          <g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="10" letter-spacing="1.15" fill="#817c73">
+            <text x="66" y="132">PAST EVENT</text><text x="133" y="235" fill="#98713d">LASTING CONSEQUENCE</text>
+            <text x="342" y="265" fill="#8f622c">CURRENT</text><text x="342" y="281" fill="#8f622c">DECISION</text>
+            <text x="410" y="389">NEXT ACTION</text><text x="391" y="119" font-size="8.5" fill="#82796b">CHANGED STATE</text><text x="162" y="376" font-size="8.5" fill="#82796b">TASK PROGRESS</text>
           </g>
-          <g fill="none" stroke="#b3bdc2" stroke-width=".65" opacity=".7"><path d="M38 60V42h18M562 42h18v18M38 482v18h18M562 500h18v-18"/></g>
-          <g font-family="ui-monospace,Consolas,monospace" font-size="8" letter-spacing="1.45" fill="#98a1a6"><text x="52" y="61">MEMORY FIELD</text><text x="489" y="481">t → t + 1</text></g>
+          <g fill="none" stroke="#c4bcae" stroke-width=".65" opacity=".7"><path d="M38 60V42h18M562 42h18v18M38 482v18h18M562 500h18v-18"/></g>
+          <g font-family="ui-monospace,Consolas,monospace" font-size="8" letter-spacing="1.45" fill="#998f7f"><text x="52" y="61">MEMORY FIELD</text><text x="489" y="481">t → t + 1</text></g>
         </svg>
         <div class="visual-caption"><span>HISTORY → STATE → ACTION</span><span>CONCEPTUAL SCHEMATIC</span></div>
         <script src="assets/js/memory-scene.js?v=light-memory-1" defer></script>

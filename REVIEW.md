@@ -71,9 +71,15 @@ Per the user's affiliation correction, Aoyang Cai and Boning Zhao also have BAAI
 
 ## Mint and ice-blue presentation refinement
 
-The shared theme now uses very pale mint and ice-blue light fields with slow gradient motion and readable deep-teal text. The conceptual memory SVG uses matching colors; all four original scientific figures, institution assets, and reported leaderboard scores remain unchanged. Reduced motion disables the decorative gradient motion and immediately shows full score bars.
+An earlier refinement introduced very pale mint and ice-blue light fields with slow gradient motion and readable deep-teal text. The conceptual memory SVG used matching colors; all four original scientific figures, institution assets, and reported leaderboard scores remained unchanged. Reduced motion disables the decorative gradient motion and immediately shows full score bars.
 
 The comparison card now shows the unweighted average of the 16 non-human models' reported Overall accuracies: `660.3 / 16 = 41.26875%`, displayed as **41.3%**. An independent calculation and visual check of the supplied table verified all 16 inputs. The average excludes the human reference, and the website validator checks both the one-decimal display and the exact bar percentage against the leaderboard JSON. Each score track stays visible while its fill expands from the left; the three fills start in sequence.
+
+## Warm-white and champagne refinement
+
+The shared theme now uses warm white, extremely pale champagne and ivory light fields, charcoal text, and restrained amber accents. The conceptual memory SVG follows the same palette; its geometry, signals, and motion are unchanged. The two background layers retain their 32- and 39-second motion, and the score fills retain their staggered left-to-right expansion. Scientific figure and institution files, author markers, all reported scores, and the 41.3% model average are unchanged.
+
+Desktop and mobile browser checks at 320, 390, 768, 1024, and 1440px verified both pages without horizontal overflow, missing images, undersized controls, or script errors. Visual inspection covered the research masthead, conceptual hero, comparison card, and leaderboard. Checks also passed for sequential fills with fixed tracks, reduced motion, and no-JavaScript fallback. Calculated contrast is at least 5.21:1 for primary button text and 4.76:1 for secondary small text on the reviewed interface surfaces.
 
 ## Practical limits
 

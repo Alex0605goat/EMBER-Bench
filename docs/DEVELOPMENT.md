@@ -68,7 +68,7 @@ Before release, inspect both pages at desktop and mobile widths. Exercise search
 
 ## Visual design and motion
 
-The site uses a white base with very pale mint and ice-blue light fields, large system sans-serif type, and readable deep-teal text. Two decorative gradient layers drift slowly behind the content without animated filters. Buttons use at least 16px labels and 44px interaction targets. Both pages share the same continuous EMBER-Bench wordmark and a geometric ember/flame icon with circuit accents.
+The site uses a warm-white base with very pale champagne and ivory light fields, large system sans-serif type, and readable charcoal text. Amber accents connect the interface and conceptual memory scene to the ember/flame identity. Two decorative gradient layers drift slowly behind the content without animated filters. Buttons use at least 16px labels and 44px interaction targets. Both pages share the same continuous EMBER-Bench wordmark and a geometric ember/flame icon with circuit accents.
 
 The navigation labels the design section as **Design**. `common.js` highlights it while the section is being read and returns to Overview outside that section, including native anchor navigation and browser history. The existing `#benchmark` anchor remains compatible with older links.
 
