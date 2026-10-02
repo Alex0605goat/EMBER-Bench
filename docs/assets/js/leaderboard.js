@@ -95,7 +95,7 @@
     });
   });
   render();
-  fetch(new URL('../../data/leaderboard.json', scriptURL))
+  fetch(new URL('../../data/leaderboard.json', scriptURL), { cache: 'no-cache' })
     .then(response => {
       if (!response.ok) throw new Error('Leaderboard data unavailable');
       return response.json();

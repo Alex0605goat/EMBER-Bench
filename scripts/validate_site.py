@@ -14,7 +14,7 @@ from urllib.parse import unquote, urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / 'docs'
 COLUMNS = ['overall', 'p_all', 'p_l1', 'p_l2', 'p_l3', 'p_l4', 'c_all', 'c_l2', 'c_l3', 'c_l4']
-TABLE_SHA = '5a9aa37bdd494acd6298db36599868cd59f991242cdf015a8fd2884bb313f566'
+TABLE_SHA = 'f5097449b88c73f2ca1e5f0daaf3b8e700efc83980eb015e0c5f288d88bd2c31'
 
 
 class Page(HTMLParser):

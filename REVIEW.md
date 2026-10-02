@@ -10,6 +10,8 @@ An independent paper audit visually checked the rendered Table 2 and checked the
 
 Verified counts: 189 tasks, 699 questions, 548 P questions, 151 C questions, and 151 matched pairs. Per-level P/C counts are documented in the leaderboard guide. The stale action-log gain of 1.7pp in the previous README was corrected to the final manuscript's **1.6pp**; the additional privileged-annotation gain is **13.0pp**. The Gemini 3.1 Pro **Preview** label now matches Table 2.
 
+The Doubao display name has been corrected to **Doubao-Seed-2.1-Pro** at the user's request in the leaderboard JSON, downloadable CSV, static HTML, and evaluation model metadata. All 170 scores, categories, and model ranks remain unchanged. The evaluation provider deployment key remains `doubao-seed-2-1-pro-260915`. The pinned table fingerprint was regenerated after verifying that only this display name changed.
+
 The paper's anonymous review URL states that review data and code are available. Its live contents could not be verified in this review. The public repository's complete dataset release remains **pending**; the website does not provide an invented dataset download or license.
 
 ## Website validation
