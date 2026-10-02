@@ -49,6 +49,10 @@ em{font-family:inherit;font-style:normal;font-weight:inherit}sup{font-size:.58em
 /* Shared type, controls, and page rhythm. */
 .eyebrow{display:flex;align-items:center;gap:10px;color:var(--ember);font:600 14px/1.5 var(--sans);letter-spacing:.5px}
 .eyebrow:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ember-glow)}
+.hero-eyebrow{font-weight:400}
+.hero-eyebrow:before{flex-shrink:0;align-self:flex-start;margin-top:.55em}
+.hero-eyebrow>span{min-width:0}
+.hero-eyebrow strong{font-weight:700}
 .section-index{color:var(--dim);font:500 13px/1.5 var(--sans);letter-spacing:.5px}
 .section{padding:124px 0}
 .section.container{padding-right:var(--gutter);padding-left:var(--gutter)}
