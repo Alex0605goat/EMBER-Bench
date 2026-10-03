@@ -92,3 +92,7 @@ The three score fills now take 0.55 seconds each and start 0.18 seconds apart, f
 The complete real dataset/media, frozen paired-ID lists, and historical provider artifacts are not included. This review verifies an executable **unified runner**, not an exact reproduction or independent validation of the paper's 16-model scores. Live provider availability and deployment IDs were not tested. Media-prefix boundaries, option overlays, face blurring, and annotation leakage require review of the actual released inputs; hashes alone cannot establish those properties.
 
 The code, website, documentation, and candidate-review process are ready for release with these boundaries stated. GitHub Actions performs the same website and offline test checks; Pages publishes only the `docs/` directory.
+
+## GitHub account username alignment
+
+On 2026-10-03, the owner account was renamed from `Alex0605goat` to `ZHAOAlexGoat`. The independent public `EMBER-Bench` repository keeps its identity and history. Current repository links, Pages URLs, site configuration, and owner-validation assertions use the new name. The October 2 review above preserves the username used at that time.

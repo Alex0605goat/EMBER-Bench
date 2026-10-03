@@ -127,7 +127,7 @@
     if (window.location.hash === '#benchmark') armJump();
     else scheduleUpdate();
   }
-  fetch(new URL('../../data/site.json', scriptURL))
+  fetch(new URL('../../data/site.json', scriptURL), { cache: 'no-cache' })
     .then(response => {
       if (!response.ok) throw new Error('Site configuration unavailable');
       return response.json();

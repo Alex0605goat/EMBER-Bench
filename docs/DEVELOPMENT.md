@@ -45,10 +45,10 @@ The analysis figure includes history-length and event-distance breakdowns, infor
 
 ## Publish with GitHub Pages
 
-1. Push the reviewed repository to `Alex0605goat/EMBER-Bench`.
+1. Push the reviewed repository to `ZHAOAlexGoat/EMBER-Bench`.
 2. In **Settings > Pages > Build and deployment**, select **GitHub Actions**.
 3. Run the **Publish benchmark website** workflow, or push a change under `docs/` to `main`.
-4. Check the deployment job and open its reported URL. The expected project URL is `https://Alex0605goat.github.io/EMBER-Bench/`.
+4. Check the deployment job and open its reported URL. The expected project URL is `https://zhaoalexgoat.github.io/EMBER-Bench/`.
 
 Only `docs/` is uploaded as the Pages artifact. Evaluation source is accessible through repository links. The workflow validates local links and paper data before publishing.
 

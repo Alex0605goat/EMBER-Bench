@@ -6,7 +6,7 @@
 
 **Which past event matters for the next action?**
 
-[Homepage](https://Alex0605goat.github.io/EMBER-Bench/) · [Leaderboard](https://Alex0605goat.github.io/EMBER-Bench/leaderboard.html) · [Evaluation code](evaluation/README.md)
+[Homepage](https://zhaoalexgoat.github.io/EMBER-Bench/) · [Leaderboard](https://zhaoalexgoat.github.io/EMBER-Bench/leaderboard.html) · [Evaluation code](evaluation/README.md)
 
 <img src="assets/memory-timeline.svg" alt="Past events leave persistent consequences that constrain the next action; causal traceback identifies the supporting event." width="100%">
 
@@ -34,7 +34,7 @@ The 151 traceback questions are paired with prediction questions from the same d
 
 ## Results from the paper
 
-The interactive [leaderboard](https://Alex0605goat.github.io/EMBER-Bench/leaderboard.html) contains the complete Table 2 snapshot: all 16 models, 10 accuracy columns, and a separate human reference. Search models, filter source class, sort each score column, and export CSV.
+The interactive [leaderboard](https://zhaoalexgoat.github.io/EMBER-Bench/leaderboard.html) contains the complete Table 2 snapshot: all 16 models, 10 accuracy columns, and a separate human reference. Search models, filter source class, sort each score column, and export CSV.
 
 | Reference | Overall | Prediction · P | Traceback · C |
 |---|---:|---:|---:|
@@ -78,6 +78,6 @@ Preview locally:
 python -m http.server 8000 --directory docs
 ```
 
-Open `http://localhost:8000/`. See [website development and deployment](docs/DEVELOPMENT.md) for GitHub Pages setup and account alignment. Repository links use the owner **Alex0605goat**, matching the authenticated GitHub account.
+Open `http://localhost:8000/`. See [website development and deployment](docs/DEVELOPMENT.md) for GitHub Pages setup and account alignment. Repository links use the owner **ZHAOAlexGoat**, matching the authenticated GitHub account.
 
 The evaluation software is provided under its [MIT license](evaluation/LICENSE). This software license does not establish a license for the manuscript or the pending dataset release.

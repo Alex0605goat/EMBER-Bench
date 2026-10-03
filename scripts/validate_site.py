@@ -63,8 +63,8 @@ def main():
             assert (path.parent / unquote(value)).is_file(), f'Broken CSS asset: {value}'
 
     config = json.loads((SITE / 'data/site.json').read_text(encoding='utf-8'))
-    assert config['owner'] == 'Alex0605goat'
-    assert config['repository'] == 'https://github.com/Alex0605goat/EMBER-Bench'
+    assert config['owner'] == 'ZHAOAlexGoat'
+    assert config['repository'] == 'https://github.com/ZHAOAlexGoat/EMBER-Bench'
     data = json.loads((SITE / 'data/leaderboard.json').read_text(encoding='utf-8'))
     rows = data['rows']
     assert len(rows) == 17 and len({r['name'] for r in rows}) == 17
